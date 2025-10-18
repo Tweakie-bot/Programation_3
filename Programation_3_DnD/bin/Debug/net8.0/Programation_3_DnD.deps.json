@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Programation_3_DnD/1.0.0": {
+        "runtime": {
+          "Programation_3_DnD.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Programation_3_DnD/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

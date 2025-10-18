@@ -1,0 +1,342 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|c:\\users\\spxrk\\desktop\\programmation_fris-e_vincent_303\\programation_3_dnd\\programation_3_dnd\\composants\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|solutionrelative:programation_3_dnd\\composants\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|c:\\users\\spxrk\\desktop\\programmation_fris-e_vincent_303\\programation_3_dnd\\programation_3_dnd\\composants\\locationcomposant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|solutionrelative:programation_3_dnd\\composants\\locationcomposant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|c:\\users\\spxrk\\desktop\\programmation_fris-e_vincent_303\\programation_3_dnd\\programation_3_dnd\\composants\\playercomposant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|solutionrelative:programation_3_dnd\\composants\\playercomposant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|c:\\users\\spxrk\\desktop\\programmation_fris-e_vincent_303\\programation_3_dnd\\programation_3_dnd\\composants\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|solutionrelative:programation_3_dnd\\composants\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|c:\\users\\spxrk\\desktop\\programmation_fris-e_vincent_303\\programation_3_dnd\\programation_3_dnd\\manager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|solutionrelative:programation_3_dnd\\manager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|c:\\users\\spxrk\\desktop\\programmation_fris-e_vincent_303\\programation_3_dnd\\programation_3_dnd\\composants\\tradercomposant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|solutionrelative:programation_3_dnd\\composants\\tradercomposant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|c:\\users\\spxrk\\desktop\\programmation_fris-e_vincent_303\\programation_3_dnd\\programation_3_dnd\\objects\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|solutionrelative:programation_3_dnd\\objects\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|c:\\users\\spxrk\\desktop\\programmation_fris-e_vincent_303\\programation_3_dnd\\programation_3_dnd\\composants\\workplace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|solutionrelative:programation_3_dnd\\composants\\workplace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|c:\\users\\spxrk\\desktop\\programmation_fris-e_vincent_303\\programation_3_dnd\\programation_3_dnd\\programme\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|solutionrelative:programation_3_dnd\\programme\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|c:\\users\\spxrk\\desktop\\programmation_fris-e_vincent_303\\programation_3_dnd\\programation_3_dnd\\composants\\composant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|solutionrelative:programation_3_dnd\\composants\\composant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|c:\\users\\spxrk\\desktop\\programmation_fris-e_vincent_303\\programation_3_dnd\\programation_3_dnd\\engine\\gameengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|solutionrelative:programation_3_dnd\\engine\\gameengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|c:\\users\\spxrk\\desktop\\programmation_fris-e_vincent_303\\programation_3_dnd\\programation_3_dnd\\state\\pausemenustate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|solutionrelative:programation_3_dnd\\state\\pausemenustate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|c:\\users\\spxrk\\desktop\\programmation_fris-e_vincent_303\\programation_3_dnd\\programation_3_dnd\\state\\ingamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|solutionrelative:programation_3_dnd\\state\\ingamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|c:\\users\\spxrk\\desktop\\programmation_fris-e_vincent_303\\programation_3_dnd\\programation_3_dnd\\state\\mainmenustate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|solutionrelative:programation_3_dnd\\state\\mainmenustate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|c:\\users\\spxrk\\desktop\\programmation_fris-e_vincent_303\\programation_3_dnd\\programation_3_dnd\\state\\gamestatemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|solutionrelative:programation_3_dnd\\state\\gamestatemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|c:\\users\\spxrk\\desktop\\programmation_fris-e_vincent_303\\programation_3_dnd\\programation_3_dnd\\interface\\istatemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|solutionrelative:programation_3_dnd\\interface\\istatemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|c:\\users\\spxrk\\desktop\\programmation_fris-e_vincent_303\\programation_3_dnd\\programation_3_dnd\\interface\\ioutput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|solutionrelative:programation_3_dnd\\interface\\ioutput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|c:\\users\\spxrk\\desktop\\programmation_fris-e_vincent_303\\programation_3_dnd\\programation_3_dnd\\manager\\outputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|solutionrelative:programation_3_dnd\\manager\\outputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|c:\\users\\spxrk\\desktop\\programmation_fris-e_vincent_303\\programation_3_dnd\\programation_3_dnd\\interface\\istate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{951EF028-4477-4A6A-8D73-B0C653623D03}|Programation_3_DnD\\Programation_3_DnD.csproj|solutionrelative:programation_3_dnd\\interface\\istate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WorkPlace.cs",
+              "DocumentMoniker": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Composants\\WorkPlace.cs",
+              "RelativeDocumentMoniker": "Programation_3_DnD\\Composants\\WorkPlace.cs",
+              "ToolTip": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Composants\\WorkPlace.cs",
+              "RelativeToolTip": "Programation_3_DnD\\Composants\\WorkPlace.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T15:41:16.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TraderComposant.cs",
+              "DocumentMoniker": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Composants\\TraderComposant.cs",
+              "RelativeDocumentMoniker": "Programation_3_DnD\\Composants\\TraderComposant.cs",
+              "ToolTip": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Composants\\TraderComposant.cs",
+              "RelativeToolTip": "Programation_3_DnD\\Composants\\TraderComposant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T15:41:05.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Inventory.cs",
+              "DocumentMoniker": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Composants\\Inventory.cs",
+              "RelativeDocumentMoniker": "Programation_3_DnD\\Composants\\Inventory.cs",
+              "ToolTip": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Composants\\Inventory.cs",
+              "RelativeToolTip": "Programation_3_DnD\\Composants\\Inventory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T15:32:32.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Position.cs",
+              "DocumentMoniker": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Composants\\Position.cs",
+              "RelativeDocumentMoniker": "Programation_3_DnD\\Composants\\Position.cs",
+              "ToolTip": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Composants\\Position.cs",
+              "RelativeToolTip": "Programation_3_DnD\\Composants\\Position.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T15:32:24.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PauseMenuState.cs",
+              "DocumentMoniker": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\State\\PauseMenuState.cs",
+              "RelativeDocumentMoniker": "Programation_3_DnD\\State\\PauseMenuState.cs",
+              "ToolTip": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\State\\PauseMenuState.cs",
+              "RelativeToolTip": "Programation_3_DnD\\State\\PauseMenuState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T11:04:12.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "InGameState.cs",
+              "DocumentMoniker": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\State\\InGameState.cs",
+              "RelativeDocumentMoniker": "Programation_3_DnD\\State\\InGameState.cs",
+              "ToolTip": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\State\\InGameState.cs",
+              "RelativeToolTip": "Programation_3_DnD\\State\\InGameState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T11:03:56.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MainMenuState.cs",
+              "DocumentMoniker": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\State\\MainMenuState.cs",
+              "RelativeDocumentMoniker": "Programation_3_DnD\\State\\MainMenuState.cs",
+              "ToolTip": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\State\\MainMenuState.cs",
+              "RelativeToolTip": "Programation_3_DnD\\State\\MainMenuState.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAewCwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:42:43.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IState.cs",
+              "DocumentMoniker": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Interface\\IState.cs",
+              "RelativeDocumentMoniker": "Programation_3_DnD\\Interface\\IState.cs",
+              "ToolTip": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Interface\\IState.cs",
+              "RelativeToolTip": "Programation_3_DnD\\Interface\\IState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:39:58.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "GameStateMachine.cs",
+              "DocumentMoniker": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\State\\GameStateMachine.cs",
+              "RelativeDocumentMoniker": "Programation_3_DnD\\State\\GameStateMachine.cs",
+              "ToolTip": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\State\\GameStateMachine.cs",
+              "RelativeToolTip": "Programation_3_DnD\\State\\GameStateMachine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:31:02.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IStateMachine.cs",
+              "DocumentMoniker": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Interface\\IStateMachine.cs",
+              "RelativeDocumentMoniker": "Programation_3_DnD\\Interface\\IStateMachine.cs",
+              "ToolTip": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Interface\\IStateMachine.cs",
+              "RelativeToolTip": "Programation_3_DnD\\Interface\\IStateMachine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:28:38.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Composant.cs",
+              "DocumentMoniker": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Composants\\Composant.cs",
+              "RelativeDocumentMoniker": "Programation_3_DnD\\Composants\\Composant.cs",
+              "ToolTip": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Composants\\Composant.cs",
+              "RelativeToolTip": "Programation_3_DnD\\Composants\\Composant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:14:59.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlayerComposant.cs",
+              "DocumentMoniker": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Composants\\PlayerComposant.cs",
+              "RelativeDocumentMoniker": "Programation_3_DnD\\Composants\\PlayerComposant.cs",
+              "ToolTip": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Composants\\PlayerComposant.cs",
+              "RelativeToolTip": "Programation_3_DnD\\Composants\\PlayerComposant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAEwA0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T14:40:33.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LocationComposant.cs",
+              "DocumentMoniker": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Composants\\LocationComposant.cs",
+              "RelativeDocumentMoniker": "Programation_3_DnD\\Composants\\LocationComposant.cs",
+              "ToolTip": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Composants\\LocationComposant.cs",
+              "RelativeToolTip": "Programation_3_DnD\\Composants\\LocationComposant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAI4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T13:55:06.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GameObject.cs",
+              "DocumentMoniker": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Objects\\GameObject.cs",
+              "RelativeDocumentMoniker": "Programation_3_DnD\\Objects\\GameObject.cs",
+              "ToolTip": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Objects\\GameObject.cs",
+              "RelativeToolTip": "Programation_3_DnD\\Objects\\GameObject.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAAB8AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T13:42:00.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Manager\\GameManager.cs",
+              "RelativeDocumentMoniker": "Programation_3_DnD\\Manager\\GameManager.cs",
+              "ToolTip": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Manager\\GameManager.cs",
+              "RelativeToolTip": "Programation_3_DnD\\Manager\\GameManager.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAswFIAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T13:41:57.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "OutputManager.cs",
+              "DocumentMoniker": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Manager\\OutputManager.cs",
+              "RelativeDocumentMoniker": "Programation_3_DnD\\Manager\\OutputManager.cs",
+              "ToolTip": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Manager\\OutputManager.cs",
+              "RelativeToolTip": "Programation_3_DnD\\Manager\\OutputManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:45:35.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IOutput.cs",
+              "DocumentMoniker": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Interface\\IOutput.cs",
+              "RelativeDocumentMoniker": "Programation_3_DnD\\Interface\\IOutput.cs",
+              "ToolTip": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Interface\\IOutput.cs",
+              "RelativeToolTip": "Programation_3_DnD\\Interface\\IOutput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:44:16.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Programme\\Program.cs",
+              "RelativeDocumentMoniker": "Programation_3_DnD\\Programme\\Program.cs",
+              "ToolTip": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Programme\\Program.cs",
+              "RelativeToolTip": "Programation_3_DnD\\Programme\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:40:58.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GameEngine.cs",
+              "DocumentMoniker": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Engine\\GameEngine.cs",
+              "RelativeDocumentMoniker": "Programation_3_DnD\\Engine\\GameEngine.cs",
+              "ToolTip": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Engine\\GameEngine.cs",
+              "RelativeToolTip": "Programation_3_DnD\\Engine\\GameEngine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:41:18.75Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

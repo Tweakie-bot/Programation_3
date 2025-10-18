@@ -1,0 +1,14 @@
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\obj\Debug\net8.0\Programation_3_DnD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\obj\Debug\net8.0\Programation_3_DnD.AssemblyInfoInputs.cache
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\obj\Debug\net8.0\Programation_3_DnD.AssemblyInfo.cs
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\obj\Debug\net8.0\Programation_3_DnD.csproj.CoreCompileInputs.cache
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\bin\Debug\net8.0\Programation_3_DnD.exe
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\bin\Debug\net8.0\Programation_3_DnD.deps.json
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\bin\Debug\net8.0\Programation_3_DnD.runtimeconfig.json
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\bin\Debug\net8.0\Programation_3_DnD.dll
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\bin\Debug\net8.0\Programation_3_DnD.pdb
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\obj\Debug\net8.0\Programation_3_DnD.dll
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\obj\Debug\net8.0\refint\Programation_3_DnD.dll
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\obj\Debug\net8.0\Programation_3_DnD.pdb
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\obj\Debug\net8.0\Programation_3_DnD.genruntimeconfig.cache
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\obj\Debug\net8.0\ref\Programation_3_DnD.dll
