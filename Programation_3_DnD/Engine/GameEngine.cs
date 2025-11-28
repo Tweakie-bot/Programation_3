@@ -9,42 +9,157 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Programation_3_DnD.Event;
+using Spectre.Console;
 
 
 namespace Programation_3_DnD.Engine
 {
-    internal class GameEngine
+    public class GameEngine
     {
+        //
         private IOutput _renderer;
-        //Renderer de Program partagé par le gae engine au reste du jeu
 
         private ConsoleKey _lastKey;
-        //Dernière entrée clavier
 
         private bool _shouldQuit = false;
 
-        private GameStateMachine _stateMachine;
-
+        private GameStateMachine _gameStateMachine;
         private GameManager _gameManager;
+        private EventManager _eventManager;
+
+        Stopwatch _stopWatch;
+
+        private float _time;
+
+        private List<string> _uiMessages = new();
+
+        private string _path;
+
+        //
         public GameEngine(IOutput renderer)
         {
+            _stopWatch = new Stopwatch();
+
+            _path = GetJsonPath();
+
             _renderer = renderer;
 
-            _stateMachine = new GameStateMachine(this, renderer);
+            _eventManager = new EventManager();
 
-            _gameManager = new GameManager(_renderer, this);
+            _gameManager = new GameManager(_renderer, this, _eventManager, _path);
+
+            _gameStateMachine = new GameStateMachine(this, _gameManager, renderer, _eventManager);
+
+            _gameManager.AddStateMachine(_gameStateMachine);
+        }
+        public GameEngine(IOutput renderer, string path)
+        {
+            _stopWatch = new Stopwatch();
+
+            _path = path;
+
+            _renderer = renderer;
+
+            _eventManager = new EventManager();
+
+            _gameManager = new GameManager(_renderer, this, _eventManager, _path);
+
+            _gameStateMachine = new GameStateMachine(this, _gameManager, renderer, _eventManager);
+
+            _gameManager.AddStateMachine(_gameStateMachine);
         }
 
+        //
+        private static string GetJsonPath()
+        {
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            DirectoryInfo dir = new DirectoryInfo(baseDir);
+
+            while (dir != null && !Directory.Exists(Path.Combine(dir.FullName, "Json")))
+                dir = dir.Parent;
+
+            if (dir == null)
+                throw new Exception("Dossier Json introuvable.");
+
+            return Path.Combine(dir.FullName, "Json");
+        }
+        public void QuitGame()
+        {
+            _shouldQuit = true;
+        }
         public void Run()
         {
+            const float MAX_MS = 330f;
+
+            float lag = 0;
+
+            float last_time = 0;
+
+            _stopWatch.Start();
+
             while (!_shouldQuit)
             {
+                float current_time = GetCurrentTime();
+                float elapsed_time = current_time - last_time;
+
+                lag += elapsed_time;
+
                 ProcessInput();
+
+                while (lag >= MAX_MS)
+                {
+                    _time += MAX_MS / 1000;
+                    if (_time > 24)
+                    {
+                        _time -= 24;
+                    }
+                    FixedUpdate(_time);
+                    lag -= MAX_MS;
+                }
+
                 Update();
                 Render();
+
+                last_time = current_time;
             }
         }
+        public void Work()
+        {
+            _time += 6;
+        }
+        public void ClearUIMessages()
+        {
+            _uiMessages.Clear();
+        }
+        public void PushUIMessage(string message)
+        {
+            _uiMessages.Add(message);
+        }
 
+        //
+        private float GetCurrentTime()
+        {
+            return (float)_stopWatch.Elapsed.TotalMilliseconds;
+        }
+        public IReadOnlyList<string> GetUIMessages()
+        {
+            return _uiMessages;
+        }
+        public GameStateMachine GetGameStateMachine()
+        {
+            return _gameStateMachine;
+        }
+        public GameManager GetGameManager()
+        {
+            return _gameManager;
+        }
+        public EventManager GetEventManager()
+        {
+            return _eventManager;
+        }
+
+        //
         private void ProcessInput()
         {
             if (Console.KeyAvailable)
@@ -54,9 +169,9 @@ namespace Programation_3_DnD.Engine
 
             if(_lastKey != ConsoleKey.None)
             {
-                _stateMachine.ProcessInput(_lastKey);
+                _gameStateMachine.ProcessInput(_lastKey);
 
-                if (_stateMachine.GetCurrentState() is InGameState)
+                if (_gameStateMachine.GetCurrentState() is InGameState)
                 {
                     _gameManager.ProcessInput(_lastKey);
                 }
@@ -64,25 +179,34 @@ namespace Programation_3_DnD.Engine
 
             _lastKey = ConsoleKey.None;
         }
-
         private void Update()
         {
-            if (_stateMachine.GetCurrentState() is InGameState)
+            _eventManager.Update();
+
+            _gameStateMachine.Update();
+
+            if (_gameStateMachine.GetCurrentState() is InGameState)
             {
                 _gameManager.Update();
             }
         }
+        private void FixedUpdate(float time)
+        {
+            _gameStateMachine.FixedUpdate(time);
 
+            if (_gameStateMachine.GetCurrentState() is InGameState)
+            {
+                _gameManager.FixedUpdate(time);
+            }
+        }
         private void Render()
         {
-            _stateMachine.Render();
+            _renderer.BeginFrame();
 
-            if (_stateMachine.GetCurrentState() is InGameState)
-            {
-                _gameManager.Render();
-            }
+            AnsiConsole.Clear();
+            _gameStateMachine.Render();
 
-            _renderer.Clear();
+            _renderer.EndFrame();
         }
     }
 }

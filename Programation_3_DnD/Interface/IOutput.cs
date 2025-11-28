@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Programation_3_DnD.Interface
 {
-    internal interface IOutput
+    public interface IOutput
     {
         public void WriteLine(string text);
-
+        public void BeginFrame();
+        public void EndFrame();
         public void PassLine();
-
         public void Clear();
     }
 }

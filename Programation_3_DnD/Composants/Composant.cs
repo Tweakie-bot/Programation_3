@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Programation_3_DnD.Composants
 {
-    internal abstract class Composant
+    public abstract class Composant
     {
-        public virtual void ProcessInput()
-        {
-
-        }
+        // Logique
+        public abstract void ProcessInput(ConsoleKey key);
         public abstract void Update();
+        public abstract void FixedUpdate(float t);
+        public abstract void Render();
     }
 }

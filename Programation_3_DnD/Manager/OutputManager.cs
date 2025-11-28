@@ -1,27 +1,49 @@
 ﻿using Programation_3_DnD.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Spectre.Console;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Programation_3_DnD.Manager
 {
-    internal class OutputManager : IOutput
+    public class OutputManager : IOutput
     {
+        private StringBuilder _buffer = new StringBuilder();
+        private bool _buffering = false;
+
         public void WriteLine(string message)
         {
-            Console.WriteLine(message);
+            if (_buffering)
+            {
+                _buffer.AppendLine(message);
+            }
+            else
+            {
+                AnsiConsole.WriteLine(message);
+            }
         }
 
         public void PassLine()
         {
-            Console.WriteLine();
+            WriteLine(string.Empty);
         }
 
         public void Clear()
         {
             Console.Clear();
+        }
+
+        public void BeginFrame()
+        {
+            _buffer.Clear();
+            _buffering = true;
+        }
+
+        public void EndFrame()
+        {
+            _buffering = false;
+
+            AnsiConsole.Cursor.SetPosition(0, 0);
+
+            AnsiConsole.Write(_buffer.ToString());
         }
     }
 }

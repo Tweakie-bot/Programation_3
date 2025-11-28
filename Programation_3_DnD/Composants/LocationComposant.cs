@@ -1,29 +1,30 @@
 ﻿using Programation_3_DnD.Interface;
 using Programation_3_DnD.Manager;
 using Programation_3_DnD.Objects;
+using Spectre.Console.Rendering;
+using Spectre.Console;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Programation_3_DnD.State;
+using Programation_3_DnD.Data;
 
 namespace Programation_3_DnD.Composants
 {
-    internal class LocationComposant : Composant
+    public class LocationComposant : Composant
     {
+        // Variables
         private string _name;
-
         private string _description;
-
         private GameManager _gameManager;
-
         private IOutput _renderer;
-
         private List<LocationComposant> _connectionTbl = new List<LocationComposant>();
-
         private LocationComposant _previousLocation;
+        private List<GameObject> _characters = new List<GameObject>();
 
-        private List<Composant> _composant;
+        // Constructeurs
         public LocationComposant(string name, string description, GameManager manager)
         {
             _name = name;
@@ -33,6 +34,36 @@ namespace Programation_3_DnD.Composants
 
             _renderer = _gameManager.GetRenderer();
         }
+        public LocationComposant(LocationData data, GameManager manager)
+        {
+            _name = data.GetName();
+            _description = data.GetDescription();
+
+            _gameManager = manager;
+            _renderer = _gameManager.GetRenderer();
+        }
+
+        // Méthodes
+        public void AddCharacter(GameObject o)
+        {
+            _characters.Add(o);
+        }
+        public void ConnectToNext(LocationComposant location)
+        {
+            if (!_connectionTbl.Contains(location))
+            {
+                _connectionTbl.Add(location);
+                location.SetPreviousLocation(this);
+            }
+        }
+
+        // Setter
+        public void SetPreviousLocation(LocationComposant previous)
+        {
+            _previousLocation = previous;
+        }
+
+        // Getters
         public string GetName()
         {
             return _name;
@@ -42,27 +73,12 @@ namespace Programation_3_DnD.Composants
             return _description;
         }
 
-        public void ConnectToNext(LocationComposant location)
-        {
-            if (!_connectionTbl.Contains(location))
-            {
-                _connectionTbl.Add(location);
-                location.SetPreviousLocation(this);
-            }
-
-            // Permet à Storm island de ne pas avoir d'option retour arrière
-        }
-
-        public void SetPreviousLocation(LocationComposant previous)
-        {
-            _previousLocation = previous;
-        }
-
-        public void ProcessInput(ConsoleKey key)
+        // Logique
+        public override void ProcessInput(ConsoleKey key)
         {
             if (key == ConsoleKey.Escape && _previousLocation != null)
             {
-                _gameManager.SetCurrentLocation(_previousLocation);
+                _gameManager.GetPlayer().SetCurrentLocation(_previousLocation);
                 return;
             }
 
@@ -81,26 +97,101 @@ namespace Programation_3_DnD.Composants
             {
                 if (input < _connectionTbl.Count + 1)
                 {
-                    _gameManager.SetCurrentLocation(_connectionTbl[input - 1]);
+                    _gameManager.GetPlayer().SetCurrentLocation(_connectionTbl[input - 1]);
                 }
             }
 
-            foreach (Composant composant in _composant)
+            if (_characters.Count > 0)
             {
-                composant.ProcessInput();
+                for (int i = 0; i < _characters.Count; i++)
+                {
+                    _characters[i].ProcessInput(key);
+                }
             }
         }
-
         public override void Update()
         {
-            foreach (Composant composant in _composant)
+            if (_characters.Count > 0)
             {
-                composant.Update();
+                for (int i = 0; i < _characters.Count; i++)
+                {
+                    _characters[i].Update();
+                }
             }
         }
-
-        public void RenderConnectedLocation()
+        public override void FixedUpdate(float t)
         {
+            if (_characters.Count > 0)
+            {
+                for (int i = 0; i < _characters.Count; i++)
+                {
+                    _characters[i].FixedUpdate(t);
+                }
+            }
+        }
+        public IRenderable RenderLocationPanel()
+        {
+            Grid grid = new Grid();
+            grid.AddColumn();
+            grid.AddColumn();
+
+            grid.AddRow(new Markup($"[bold yellow]{_name}[/]"), new Markup($"[grey]{_description}[/]"));
+
+            if (_connectionTbl.Count > 0)
+            {
+                for (int i = 0; i < _connectionTbl.Count; i++)
+                {
+                    LocationComposant next_destination = _connectionTbl[i];
+                    grid.AddRow(new Markup($"[green]{i + 1}[/]"), new Markup(next_destination.GetName()));
+                }
+            }
+
+            if (_previousLocation != null)
+            {
+                grid.AddRow(new Markup("[red]ESC[/]"), new Markup($"Go back to : {_previousLocation.GetName()}"));
+            }
+
+            if (_characters.Count > 0)
+            {
+                foreach (GameObject character in _characters)
+                {
+                    RoutineComposant routine = character.GetComposant<RoutineComposant>();
+
+                    EntityStateMachine entity_state_machine = routine.GetEntityStateMachine();
+
+                    string message = "";
+
+                    if (entity_state_machine.GetCurrentTradeState() is ProposeTradeEntityState)
+                    {
+                        message = "Press T to trade";
+                    }
+                    else if (entity_state_machine.GetCurrentTradeState() is DoesNotTradeEntityState) 
+                    {
+                        message = "Come back later to trade";
+                    }
+
+                    if (entity_state_machine.GetCurrentWorkState() is ProposeWorkEntityState)
+                    {
+                        message += (message != "" ? "\n" : "") + "Press W to work";
+                    }
+                    else if (entity_state_machine.GetCurrentWorkState() is DoesNotProposeWorkEntityState)
+                    {
+                        message += (message != "" ? "\n" : "") + "Come back later to work";
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(message))
+                    {
+                        grid.AddRow(new Markup($"[italic]{message}[/]"), new Text(""));
+                    }
+                }
+            }
+            return new Panel(grid).Header("[bold]Location[/]").Border(BoxBorder.Rounded).Padding(1, 1, 1, 1);
+        }
+        public override void Render()
+        {
+            /*
+            _renderer.WriteLine(_name);
+
             if (_connectionTbl.Count > 0)
             {
                 for (int i = 0; i < _connectionTbl.Count; i++)
@@ -113,40 +204,15 @@ namespace Programation_3_DnD.Composants
             {
                 _renderer.WriteLine($"[ESCAPE] to go back to {_previousLocation.GetName()}");
             }
-        }
 
-        public void AddComposant(Composant composant) // Ajout
-        {
-            _composant.Add(composant);
-        }
-
-        public bool IsContaining(Composant composant) // Vérifie la disponibilité
-        {
-            if (_composant.Contains(composant))
+            if (_characters.Count > 0)
             {
-                return true;
-            }
-
-            return false;
-        }
-
-        public Composant GetComposant<T>() where T : Composant
-        {
-            Type type = typeof(T);
-
-            if (_composant.Count != 0)
-            {
-                for (int index = 0; index < _composant.Count; index++)
+                for (int i = 0; i < _characters.Count; i++)
                 {
-                    if (_composant[index].GetType() == type)
-                    {
-                        return _composant[index];
-                    }
+                    _characters[i].Render();
                 }
             }
-
-            throw new Exception("No composant of that type is found");
-
+            */
         }
     }
 }

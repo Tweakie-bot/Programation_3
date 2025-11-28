@@ -1,0 +1,17 @@
+﻿{
+  "_name": "Player",
+  "_inventory": [
+    {
+      "_itemName": "Sword",
+      "_count": 1
+    },
+    {
+      "_itemName": "Potion de soin",
+      "_count": 3
+    },
+    {
+      "_itemName": "Gold",
+      "_count": 25
+    }
+  ]
+}

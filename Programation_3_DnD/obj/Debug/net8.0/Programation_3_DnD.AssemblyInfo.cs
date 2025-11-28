@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Programation_3_DnD")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0d99e4c01a8b31b10fa6641923bb95e9fe27fba")]
 [assembly: System.Reflection.AssemblyProductAttribute("Programation_3_DnD")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Programation_3_DnD")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

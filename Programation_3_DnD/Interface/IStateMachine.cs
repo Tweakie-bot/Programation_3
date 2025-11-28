@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace Programation_3_DnD.Interface
 {
-    internal interface IStateMachine
+    public interface IStateMachine
     {
         public void ProcessInput(ConsoleKey key);
-
         public void Update();
-
         public void FixedUpdate(float delta);
-
         public void Render();
     }
 }
