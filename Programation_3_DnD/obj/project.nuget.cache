@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dLz4FeAe6XU=",
+  "dgSpecHash": "RvRNMi6GsiU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Programation_3_DnD.csproj",
+  "projectFilePath": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Programation_3_DnD_Console.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Spxrk\\.nuget\\packages\\namotion.reflection\\3.4.2\\namotion.reflection.3.4.2.nupkg.sha512",
     "C:\\Users\\Spxrk\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",

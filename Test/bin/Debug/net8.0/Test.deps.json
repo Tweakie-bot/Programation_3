@@ -12,7 +12,7 @@
           "NUnit": "3.14.0",
           "NUnit.Analyzers": "3.9.0",
           "NUnit3TestAdapter": "4.5.0",
-          "Programation_3_DnD": "1.0.0",
+          "Programation_3_DnD_Console": "1.0.0",
           "Spectre.Console": "0.54.0",
           "Spectre.Console.Cli": "0.53.0",
           "coverlet.collector": "6.0.0"
@@ -405,13 +405,25 @@
         }
       },
       "System.Reflection.Metadata/1.6.0": {},
-      "Programation_3_DnD/1.0.0": {
+      "Programation_3_DnD_Console/1.0.0": {
         "dependencies": {
+          "Programmation_3_DnD_Core": "1.0.0",
           "Spectre.Console": "0.54.0",
           "Spectre.Console.Cli": "0.53.0"
         },
         "runtime": {
-          "Programation_3_DnD.dll": {
+          "Programation_3_DnD_Console.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Programmation_3_DnD_Core/1.0.0": {
+        "dependencies": {
+          "Spectre.Console": "0.54.0"
+        },
+        "runtime": {
+          "Programmation_3_DnD_Core.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -558,7 +570,12 @@
       "path": "system.reflection.metadata/1.6.0",
       "hashPath": "system.reflection.metadata.1.6.0.nupkg.sha512"
     },
-    "Programation_3_DnD/1.0.0": {
+    "Programation_3_DnD_Console/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Programmation_3_DnD_Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

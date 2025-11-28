@@ -133,6 +133,19 @@
             "locale": "zh-Hans"
           }
         }
+      },
+      "Programmation_3_DnD_Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Spectre.Console": "0.54.0"
+        },
+        "compile": {
+          "bin/placeholder/Programmation_3_DnD_Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Programmation_3_DnD_Core.dll": {}
+        }
       }
     }
   },
@@ -377,10 +390,16 @@
         "spectre.console.cli.0.53.0.nupkg.sha512",
         "spectre.console.cli.nuspec"
       ]
+    },
+    "Programmation_3_DnD_Core/1.0.0": {
+      "type": "project",
+      "path": "../Programmation_3_DnD_Core/Programmation_3_DnD_Core.csproj",
+      "msbuildProject": "../Programmation_3_DnD_Core/Programmation_3_DnD_Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Programmation_3_DnD_Core >= 1.0.0",
       "Spectre.Console >= 0.54.0",
       "Spectre.Console.Cli >= 0.53.0"
     ]
@@ -392,9 +411,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Programation_3_DnD.csproj",
-      "projectName": "Programation_3_DnD",
-      "projectPath": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Programation_3_DnD.csproj",
+      "projectUniqueName": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Programation_3_DnD_Console.csproj",
+      "projectName": "Programation_3_DnD_Console",
+      "projectPath": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Programation_3_DnD_Console.csproj",
       "packagesPath": "C:\\Users\\Spxrk\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\obj\\",
       "projectStyle": "PackageReference",
@@ -416,7 +435,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programmation_3_DnD_Core\\Programmation_3_DnD_Core.csproj": {
+              "projectPath": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programmation_3_DnD_Core\\Programmation_3_DnD_Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

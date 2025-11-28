@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Programation_3_DnD\Programation_3_DnD.csproj" />
+    <ProjectReference Include="..\Programation_3_DnD\Programation_3_DnD_Console.csproj" />
   </ItemGroup>
 
   <ItemGroup>

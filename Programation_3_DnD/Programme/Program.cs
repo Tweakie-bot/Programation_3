@@ -7,8 +7,10 @@ internal class Program
     static void Main()
     {
         IOutput _renderer = new OutputManager();
-        
-        GameEngine engine = new GameEngine(_renderer);
+
+        string _jsonPath = Path.Combine(AppContext.BaseDirectory, "Json");
+
+        GameEngine engine = new GameEngine(_renderer, _jsonPath);
         
         engine.Run();
 
