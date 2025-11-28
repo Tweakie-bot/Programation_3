@@ -44,12 +44,7 @@ namespace Programation_3_DnD.State
         public void FixedUpdate(float delta) { }
         public void Render()
         {
-            Panel menu = new Panel(new Markup("[bold yellow]THE DRAGONS OF STORMWRECK ISLAND[/]\n\n" + "[green][[ENTER]][/]\tPlay\n" + "[red][[ESC]][/]\tQuit"))
-            .Header("[bold underline]MAIN MENU[/]")
-            .BorderColor(Color.Grey)
-            .Padding(2, 1);
-
-            AnsiConsole.Write(Align.Center(menu));
+            _renderer.RenderMainMenuState(this);
         }
     }
 }

@@ -18,6 +18,7 @@ namespace Programation_3_DnD.State
         GameStateMachine _gameStateMachine;
         private GameManager _gameManager;
         private GameObject _playerGameObject;
+        private IOutput _renderer;
 
         //
         public InventoryState(GameEngine engine, GameStateMachine machine,GameManager manager, IOutput render)
@@ -25,7 +26,11 @@ namespace Programation_3_DnD.State
             _gameStateMachine = machine;
             _gameManager = manager;
             _playerGameObject = _gameManager.GetPlayer();
+            _renderer = render;
         }
+
+        //
+        public GameObject GetPlayer() { return _playerGameObject; }
 
         //
         public void Enter() { }
@@ -41,27 +46,7 @@ namespace Programation_3_DnD.State
         public void FixedUpdate(float t) { }
         public void Render()
         {
-            InventoryComposant inventory = _playerGameObject.GetComposant<InventoryComposant>();
-
-            Panel header = new Panel(new Markup("[bold yellow]INVENTORY[/] \n \n [grey][[Q]][/] Retour")).Header("[bold]Menu[/]").Border(BoxBorder.Rounded);
-
-            int gold = inventory.GetCount("Gold");
-
-            Panel gold_panel = new Panel(new Markup($"[yellow]Gold[/] \n [bold]{gold}[/]")).Header("[bold]$ [/]").Border(BoxBorder.Rounded);
-
-            IRenderable inventory_panel = inventory.RenderInventoryPanel(exclude_gold: true);
-
-            Layout right_layout = new Layout().SplitRows(new Layout("gold").Size(10),new Layout("items"));
-
-            right_layout["gold"].Update(gold_panel);
-            right_layout["items"].Update(inventory_panel);
-
-            Layout layout = new Layout().SplitColumns(new Layout("left").Ratio(1), new Layout("right").Ratio(2));
-
-            layout["left"].Update(header);
-            layout["right"].Update(right_layout);
-
-            AnsiConsole.Write(layout);
+            _renderer.RenderInventoryState(this);
         }
 
     }

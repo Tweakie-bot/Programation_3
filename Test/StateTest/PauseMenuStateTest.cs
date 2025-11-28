@@ -5,6 +5,7 @@ using Programation_3_DnD.Manager;
 using Programation_3_DnD.Objects;
 using Programation_3_DnD.State;
 using Programation_3_DnD.Event;
+using Programation_3_DnD.Output;
 using System;
 
 namespace Test.StateTest

@@ -63,14 +63,14 @@ namespace Programation_3_DnD.Objects
         {
            foreach(Composant comp in _composantTable)
             {
-                    comp.ProcessInput(key);
+                comp.ProcessInput(key);
             }
         }
         public void Update()
         {
             foreach (Composant comp in _composantTable)
             {
-                    comp.Update();
+                comp.Update();
             }
         }
         public void FixedUpdate(float t)
@@ -84,14 +84,7 @@ namespace Programation_3_DnD.Objects
         {
             foreach (Composant comp in _composantTable)
             {
-                if (comp is InventoryComposant)
-                {
-
-                }
-                else
-                {
-                    comp.Render();
-                }
+               comp.Render();
             }
         }
     }

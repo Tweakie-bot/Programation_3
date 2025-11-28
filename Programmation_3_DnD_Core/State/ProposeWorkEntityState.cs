@@ -37,9 +37,6 @@ namespace Programation_3_DnD.State
             }
         }
         public void Update() { }
-        public void Render()
-        {
-            _renderer.WriteLine("Press W to work");
-        }
+        public void Render() { }
     }
 }

@@ -39,7 +39,6 @@ namespace Programation_3_DnD.Event
 
             if (inventory == null || force == null)
             {
-                _renderer.WriteLine("WorkEvent failed: missing component.");
                 _isCompleted = true;
                 return;
             }

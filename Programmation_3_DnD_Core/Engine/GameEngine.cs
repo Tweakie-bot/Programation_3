@@ -174,8 +174,13 @@ namespace Programation_3_DnD.Engine
         {
             _renderer.BeginFrame();
 
-            AnsiConsole.Clear();
+            _renderer.Clear();
             _gameStateMachine.Render();
+
+            if (_gameStateMachine.GetCurrentState() is InGameState)
+            {
+                _gameManager.Render();
+            }
 
             _renderer.EndFrame();
         }

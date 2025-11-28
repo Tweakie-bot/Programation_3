@@ -2,6 +2,7 @@
 using Programation_3_DnD.Event;
 using Programation_3_DnD.Interface;
 using Programation_3_DnD.Manager;
+using Programation_3_DnD.Output;
 
 public class RenderEventTest
 {

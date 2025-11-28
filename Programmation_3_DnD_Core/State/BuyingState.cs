@@ -127,6 +127,11 @@ namespace Programation_3_DnD
         }
 
         //
+        public InventoryComposant GetPlayerInventory() { return _playerInventory; }
+        public InventoryComposant GetMerchantInventory() { return _merchantInventory; }
+        public int GetSelected() { return _selectedIndex; }
+
+        //
         public void Enter() { }
         public void Exit() { }
         public void ProcessInput(ConsoleKey key)
@@ -179,65 +184,7 @@ namespace Programation_3_DnD
         }
         public void Render()
         {
-            InventoryComposant player_inventory = _playerInventory;
-            InventoryComposant merchant_inventory = _merchantInventory;
-
-            int player_gold = player_inventory.GetCount("Gold");
-            int merchant_gold = merchant_inventory.GetCount("Gold");
-
-            Grid main = new Grid();
-            main.AddColumn();
-            main.AddColumn();
-
-            Grid gold_grid = new Grid();
-            gold_grid.AddColumn();
-            gold_grid.AddColumn();
-
-            gold_grid.AddRow(new Markup("[yellow]Player Gold[/]"), new Markup("[yellow]Merchant Gold[/]"));
-
-            gold_grid.AddRow(new Markup($"[bold]{player_gold}[/]"), new Markup($"[bold]{merchant_gold}[/]"));
-
-            Panel gold_panel = new Panel(gold_grid).Header("[bold]Gold[/]").Border(BoxBorder.Rounded);
-
-            Grid item_grid = new Grid();
-            item_grid.AddColumn();
-            item_grid.AddColumn();
-            item_grid.AddColumn();
-
-            item_grid.AddRow(new Markup("[bold]Item[/]"), new Markup("[bold]Price[/]"), new Markup("[bold]Stock[/]"));
-
-            int displayed_index = 0;
-
-            for (int i = 0; i < merchant_inventory.GetItemCount(); i++)
-            {
-                ItemComposant item = merchant_inventory.GetItemByIndex(i);
-
-                if (item.GetName() == "Gold")
-                {
-                    continue;
-                }
-
-                int count = merchant_inventory.GetCount(item.GetName());
-
-                bool selected = displayed_index == _selectedIndex;
-
-                if (selected)
-                {
-                    item_grid.AddRow(new Markup($"[black on yellow]> {item.GetName()} <[/]"), new Markup($"[black on yellow]{item.GetPrice()}[/]"), new Markup($"[black on yellow]{count}[/]"));
-                }
-                else
-                {
-                    item_grid.AddRow(new Markup(item.GetName()), new Markup(item.GetPrice().ToString()), new Markup(count.ToString()));
-                }
-
-                displayed_index++;
-            }
-
-            Panel shop_panel = new Panel(item_grid).Header("[bold]Buy Items[/]").Border(BoxBorder.Double);
-
-            main.AddRow(gold_panel, shop_panel);
-
-            AnsiConsole.Write(main);
+           _renderer.RenderBuyingState(this);
         }
 
 

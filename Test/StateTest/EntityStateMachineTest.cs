@@ -7,6 +7,7 @@ using Programation_3_DnD.State;
 using Programation_3_DnD.Composants;
 using System;
 using Programation_3_DnD.Manager;
+using Programation_3_DnD.Output;
 
 namespace Test.StateTest
 {

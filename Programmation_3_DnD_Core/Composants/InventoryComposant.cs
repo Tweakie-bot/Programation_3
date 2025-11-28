@@ -146,64 +146,10 @@ namespace Programation_3_DnD.Composants
         public override void ProcessInput(ConsoleKey key) { }
         public override void Update() { }
         public override void FixedUpdate(float time) { }
-        public IRenderable RenderInventoryPanel(bool exclude_gold = false)
-    {
-            Grid grid = new Grid();
-            grid.AddColumn();
-
-            if (_items.Count == 0)
-            {
-                grid.AddRow(new Markup("[grey]Inventaire vide[/]"));
-            }
-            else
-            {
-                for (int i = 0; i < _items.Count; i++)
-                {
-                    ItemComposant item = _items[i];
-                    int count = _counts[i];
-
-                    string line =$"[yellow]{item.GetName()}[/] x{count} - {item.GetPrice()}g";
-
-                    if (item is WeaponComposant weapon)
-                    {
-                        line += $" ([red]{weapon.GetDamage()} dmg[/])";
-                    }
-
-                    grid.AddRow(new Markup(line));
-                }
-            }
-
-            return new Panel(grid).Header("[bold]bag of items[/]").Border(BoxBorder.Double);
-        }
 
     public override void Render()
         {
-            /*
-            if (_items.Count == 0)
-            {
-                _renderer.WriteLine("Inventaire vide.");
-                return;
-            }
-
-            _renderer.WriteLine("=== Inventaire ===");
-
-            for (int i = 0; i < _items.Count; i++)
-            {
-                ItemComposant item = _items[i];
-                int count = _counts[i];
-
-                _renderer.WriteLine(item.GetName());
-                _renderer.WriteLine("Prix : " + item.GetPrice());
-                _renderer.WriteLine("Quantité : " + count);
-
-                WeaponComposant weapon = item as WeaponComposant;
-                if (weapon != null)
-                {
-                    _renderer.WriteLine("Dégâts : " + weapon.GetDamage());
-                }
-
-                _renderer.PassLine();
-            } */
+            _renderer.SetInventory(this);
         }
     }
 }

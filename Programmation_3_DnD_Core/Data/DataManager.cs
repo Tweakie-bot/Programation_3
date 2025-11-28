@@ -27,9 +27,6 @@ namespace Programation_3_DnD.Data
 
         public static List<T> LoadAll<T>(string folderPath)
         {
-            Console.WriteLine("CHEMIN REÇU : " + folderPath);
-            Console.WriteLine("EST ABSOLU : " + Path.IsPathRooted(folderPath));
-
             if (!Path.IsPathRooted(folderPath))
                 throw new Exception("Le chemin fourni doit être absolu : " + folderPath);
 

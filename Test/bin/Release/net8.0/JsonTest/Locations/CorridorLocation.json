@@ -1,0 +1,10 @@
+﻿{
+  "_name": "Upstairs corridor",
+  "_description": "The corridor leads to 3 rooms",
+  "_nextLocations": [
+    "Kitchen",
+    "Prayer room",
+    "Restroom"
+  ],
+  "_characters" :  []
+}

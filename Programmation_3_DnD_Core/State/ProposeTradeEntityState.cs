@@ -38,9 +38,6 @@ namespace Programation_3_DnD.State
             }
         }
         public void Update() { }
-        public void Render()
-        {
-            _renderer.WriteLine("Press T to trade");
-        }
+        public void Render() { }
     }
 }

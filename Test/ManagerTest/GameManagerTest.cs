@@ -6,6 +6,7 @@ using Programation_3_DnD.Interface;
 using Programation_3_DnD.Objects;
 using Programation_3_DnD.Composants;
 using Programation_3_DnD.State;
+using Programation_3_DnD.Output;
 using System;
 
 public class GameManagerTest

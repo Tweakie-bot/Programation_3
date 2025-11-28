@@ -46,9 +46,7 @@ namespace Programation_3_DnD.State
         public void FixedUpdate(float dt) { }
         public void Render()
         {
-            Panel menu = new Panel(new Markup("[bold yellow]PAUSE MENU[/]\n\n" + "[grey][[ESC]][/] Return to main menu\n" + "[grey][[P]][/] Resume game\n" + "[grey][[I]][/] Open inventory")).Header("[bold]Game Paused[/]").Border(BoxBorder.Double).Padding(2, 1);
-
-            AnsiConsole.Write(Align.Center(menu, VerticalAlignment.Middle));
+            _renderer.RenderPauseMenuState(this);
         }
     }
 }

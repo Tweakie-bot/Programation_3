@@ -1350,6 +1350,7 @@
       "NUnit.Analyzers >= 3.9.0",
       "NUnit3TestAdapter >= 4.5.0",
       "Programation_3_DnD_Console >= 1.0.0",
+      "Programmation_3_DnD_Core >= 1.0.0",
       "Spectre.Console >= 0.54.0",
       "Spectre.Console.Cli >= 0.53.0",
       "coverlet.collector >= 6.0.0"
@@ -1389,6 +1390,9 @@
           "projectReferences": {
             "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Programation_3_DnD_Console.csproj": {
               "projectPath": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programation_3_DnD\\Programation_3_DnD_Console.csproj"
+            },
+            "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programmation_3_DnD_Core\\Programmation_3_DnD_Core.csproj": {
+              "projectPath": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programmation_3_DnD_Core\\Programmation_3_DnD_Core.csproj"
             }
           }
         }

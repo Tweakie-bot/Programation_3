@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Programation_3_DnD.State;
 using Programation_3_DnD.Data;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Programation_3_DnD.Composants
 {
@@ -72,7 +73,28 @@ namespace Programation_3_DnD.Composants
         {
             return _description;
         }
+        public int GetCount()
+        {
+            return _connectionTbl.Count();
+        }
+        public LocationComposant GetPreviousLocation()
+        {
+            return _previousLocation;
+        }
+        public LocationComposant GetLocationAtIndex(int index)
+        {
+            return _connectionTbl[index];
+        }
+        public int GetCharactersCount()
+        {
+            return _characters.Count();
+        }
+        public List<GameObject> GetCopyOfCharacterTable()
+        {
+            List<GameObject> copy = new List<GameObject>(_characters);
 
+            return copy;
+        }
         // Logique
         public override void ProcessInput(ConsoleKey key)
         {
@@ -129,90 +151,9 @@ namespace Programation_3_DnD.Composants
                 }
             }
         }
-        public IRenderable RenderLocationPanel()
-        {
-            Grid grid = new Grid();
-            grid.AddColumn();
-            grid.AddColumn();
-
-            grid.AddRow(new Markup($"[bold yellow]{_name}[/]"), new Markup($"[grey]{_description}[/]"));
-
-            if (_connectionTbl.Count > 0)
-            {
-                for (int i = 0; i < _connectionTbl.Count; i++)
-                {
-                    LocationComposant next_destination = _connectionTbl[i];
-                    grid.AddRow(new Markup($"[green]{i + 1}[/]"), new Markup(next_destination.GetName()));
-                }
-            }
-
-            if (_previousLocation != null)
-            {
-                grid.AddRow(new Markup("[red]ESC[/]"), new Markup($"Go back to : {_previousLocation.GetName()}"));
-            }
-
-            if (_characters.Count > 0)
-            {
-                foreach (GameObject character in _characters)
-                {
-                    RoutineComposant routine = character.GetComposant<RoutineComposant>();
-
-                    EntityStateMachine entity_state_machine = routine.GetEntityStateMachine();
-
-                    string message = "";
-
-                    if (entity_state_machine.GetCurrentTradeState() is ProposeTradeEntityState)
-                    {
-                        message = "Press T to trade";
-                    }
-                    else if (entity_state_machine.GetCurrentTradeState() is DoesNotTradeEntityState) 
-                    {
-                        message = "Come back later to trade";
-                    }
-
-                    if (entity_state_machine.GetCurrentWorkState() is ProposeWorkEntityState)
-                    {
-                        message += (message != "" ? "\n" : "") + "Press W to work";
-                    }
-                    else if (entity_state_machine.GetCurrentWorkState() is DoesNotProposeWorkEntityState)
-                    {
-                        message += (message != "" ? "\n" : "") + "Come back later to work";
-                    }
-
-                    if (!string.IsNullOrWhiteSpace(message))
-                    {
-                        grid.AddRow(new Markup($"[italic]{message}[/]"), new Text(""));
-                    }
-                }
-            }
-            return new Panel(grid).Header("[bold]Location[/]").Border(BoxBorder.Rounded).Padding(1, 1, 1, 1);
-        }
         public override void Render()
         {
-            /*
-            _renderer.WriteLine(_name);
-
-            if (_connectionTbl.Count > 0)
-            {
-                for (int i = 0; i < _connectionTbl.Count; i++)
-                {
-                    _renderer.WriteLine($"{i + 1}.  {_connectionTbl[i].GetName()}");
-                }
-            }
-
-            if (_previousLocation != null)
-            {
-                _renderer.WriteLine($"[ESCAPE] to go back to {_previousLocation.GetName()}");
-            }
-
-            if (_characters.Count > 0)
-            {
-                for (int i = 0; i < _characters.Count; i++)
-                {
-                    _characters[i].Render();
-                }
-            }
-            */
+            _renderer.SetLocation(this);
         }
     }
 }

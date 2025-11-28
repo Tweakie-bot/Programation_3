@@ -31,6 +31,11 @@ namespace Programation_3_DnD.State
         }
 
         //
+        public GameObject GetPlayer() { return _player; }
+        public GameEngine GetGameEngine() { return _gameEngine; }
+        public float GetTime() { return _totalTime; }
+
+        //
         public void Enter() { }
         public void Exit() { }
         public void ProcessInput(ConsoleKey key)
@@ -45,42 +50,9 @@ namespace Programation_3_DnD.State
         {
             _totalTime = d_t;
         }
-
-        
         public void Render()
         {
-            PositionComposant position = _player.GetComposant<PositionComposant>();
-
-            Panel header = new Panel(new Markup($"[bold]STATE :[/] [yellow]IN GAME[/]\n[grey]TIME[/] {_totalTime:0.0}\n\n[[P]] Pause Menu")).Header("[bold]Status[/]").Border(BoxBorder.Rounded);
-
-            IRenderable game_view = position.GetCurrentLocation().RenderLocationPanel();
-
-            Layout layout = new Layout().SplitColumns(new Layout("left").Ratio(1), new Layout("right").Ratio(2));
-
-            layout["left"].Update(header);
-
-            IReadOnlyList<string> messages = _gameEngine.GetUIMessages();
-
-            if (messages.Count > 0)
-            {
-                Grid message_grid = new Grid();
-                message_grid.AddColumn();
-
-                foreach (string message_grid_i in messages)
-                {
-                    message_grid.AddRow(new Markup($"[green]{message_grid_i}[/]"));
-                }
-
-                Panel eventPanel = new Panel(message_grid).Header("[bold]Events[/]").Border(BoxBorder.Rounded);
-
-                layout["right"].Update(new Rows(game_view,eventPanel));
-            }
-            else
-            {
-                layout["right"].Update(game_view);
-            }
-
-            AnsiConsole.Write(layout);
+            _renderer.RenderInGameState(this);
         }
 
     }

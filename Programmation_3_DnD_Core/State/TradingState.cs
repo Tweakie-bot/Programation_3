@@ -33,6 +33,20 @@ namespace Programation_3_DnD.State
         }
 
         //
+        public GameObject GetPlayer()
+        {
+            return _player;
+        }
+        public GameObject GetMerchant()
+        {
+            return _merchant;
+        }
+        public int GetSelected()
+        {
+            return _selected;
+        }
+
+        //
         public void Enter() { }
 
         public void Exit() { }
@@ -74,48 +88,7 @@ namespace Programation_3_DnD.State
         public void FixedUpdate(float delta) { }
         public void Render()
         {
-            InventoryComposant player_inventory = _player.GetComposant<InventoryComposant>();
-            InventoryComposant merchant_inventory = _merchant.GetComposant<InventoryComposant>();
-
-            int player_gold = player_inventory.GetCount("Gold");
-            int merchant_gold = merchant_inventory.GetCount("Gold");
-
-            string[] options = { "Buy", "Sell", "Quit" };
-
-            Grid main = new Grid();
-            main.AddColumn();
-            main.AddColumn();
-
-            Grid gold_grid = new Grid();
-            gold_grid.AddColumn();
-            gold_grid.AddColumn();
-
-            gold_grid.AddRow(new Markup($"[yellow]Player Gold[/]"), new Markup($"[yellow]Merchant Gold[/]"));
-
-            gold_grid.AddRow(new Markup($"[bold]{player_gold}[/]"), new Markup($"[bold]{merchant_gold}[/]"));
-
-            Panel gold_panel = new Panel(gold_grid).Header("[bold]Gold[/]").Border(BoxBorder.Rounded);
-
-            Grid menu_grid = new Grid();
-            menu_grid.AddColumn();
-
-            for (int i = 0; i < options.Length; i++)
-            {
-                if (i == _selected) // ton index actuel
-                {
-                    menu_grid.AddRow(new Markup($"[black on yellow]> {options[i]} <[/]"));
-                }
-                else
-                {
-                    menu_grid.AddRow(new Markup($"  {options[i]}"));
-                }
-            }
-
-            Panel menu_panel = new Panel(menu_grid).Header("[bold]Trading[/]").Border(BoxBorder.Double);
-
-            main.AddRow(gold_panel, menu_panel);
-
-            AnsiConsole.Write(main);
+            _renderer.RenderTradingState(this);
         }
 
 

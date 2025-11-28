@@ -98,6 +98,11 @@ namespace Programation_3_DnD.State
         }
 
         //
+        public GameObject GetPlayer() { return _player; }
+        public GameObject GetMerchant() { return _merchant; }
+        public int GetSelected() { return _selected; }
+
+        //
         public void Enter() { }
         public void Exit() { }
         public void ProcessInput(ConsoleKey key)
@@ -136,65 +141,7 @@ namespace Programation_3_DnD.State
         public void FixedUpdate(float delta) { }
         public void Render()
         {
-            InventoryComposant player_inventory = _player.GetComposant<InventoryComposant>();
-            InventoryComposant merchant_inventory = _merchant.GetComposant<InventoryComposant>();
-
-            int player_gold = player_inventory.GetCount("Gold");
-            int merchant_gold = merchant_inventory.GetCount("Gold");
-
-            Grid main = new Grid();
-            main.AddColumn();
-            main.AddColumn();
-
-            Grid gold_grid = new Grid();
-            gold_grid.AddColumn();
-            gold_grid.AddColumn();
-
-            gold_grid.AddRow(new Markup("[yellow]Player Gold[/]"), new Markup("[yellow]Merchant Gold[/]"));
-
-            gold_grid.AddRow(new Markup($"[bold]{player_gold}[/]"), new Markup($"[bold]{merchant_gold}[/]"));
-
-            Panel gold_panel = new Panel(gold_grid).Header("[bold]Gold[/]").Border(BoxBorder.Rounded);
-
-            Grid item_grid = new Grid();
-            item_grid.AddColumn();
-            item_grid.AddColumn();
-            item_grid.AddColumn();
-
-            item_grid.AddRow(new Markup("[bold]Item[/]"), new Markup("[bold]Price[/]"), new Markup("[bold]Quantity[/]"));
-
-            int displayed_index = 0;
-
-            for (int i = 0; i < player_inventory.GetItemCount(); i++)
-            {
-                ItemComposant item = player_inventory.GetItemByIndex(i);
-
-                if (item.GetName() == "Gold")
-                {
-                    continue;
-                }
-
-                int count = player_inventory.GetCount(item.GetName());
-                bool selected = displayed_index == _selected;
-
-                if (selected)
-                {
-                    item_grid.AddRow(new Markup($"[black on yellow]> {item.GetName()} <[/]"), new Markup($"[black on yellow]{item.GetPrice()}[/]"), new Markup($"[black on yellow]{count}[/]"));
-                }
-
-                else
-                {
-                    item_grid.AddRow(new Markup(item.GetName()), new Markup(item.GetPrice().ToString()), new Markup(count.ToString()));
-                }
-
-                displayed_index++;
-            }
-
-            Panel sell_panel = new Panel(item_grid).Header("[bold]Sell Items[/]").Border(BoxBorder.Double);
-
-            main.AddRow(gold_panel, sell_panel);
-
-            AnsiConsole.Write(main);
+           _renderer.RenderSellingState(this);
         }
 
         /*
