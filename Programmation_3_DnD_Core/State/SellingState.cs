@@ -1,11 +1,8 @@
-﻿using Programation_3_DnD.Composants;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Objects;
-using Spectre.Console;
+﻿
 using System;
 using System.Collections.Generic;
 
-namespace Programation_3_DnD.State
+namespace Programation_3_DnD_Core
 {
     public class SellingState : IState
     {
@@ -105,25 +102,25 @@ namespace Programation_3_DnD.State
         //
         public void Enter() { }
         public void Exit() { }
-        public void ProcessInput(ConsoleKey key)
+        public void TreatInput(IInput input_manager)
         {
-            if (key == ConsoleKey.Escape)
+            if (input_manager.IsKeyCancel())
             {
                 _exit = true;
                 return;
             }
 
-            if (key == ConsoleKey.UpArrow)
+            if  (input_manager.IsKeyUp())
             {
                 _selected--;
                 if (_selected < 0) _selected = _items.Count - 1;
             }
-            else if (key == ConsoleKey.DownArrow)
+            else if (input_manager.IsKeyDown())
             {
                 _selected++;
                 if (_selected >= _items.Count) _selected = 0;
             }
-            else if (key == ConsoleKey.Enter)
+            else if (input_manager.IsKeyValidate())
             {
                 TrySell();
             }

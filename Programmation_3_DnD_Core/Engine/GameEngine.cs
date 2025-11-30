@@ -1,26 +1,15 @@
-﻿using Programation_3_DnD.Interface;
-using Programation_3_DnD.Objects;
-using Programation_3_DnD.State;
-using Programation_3_DnD.Manager;
+﻿using System.Diagnostics;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Programation_3_DnD.Event;
-using Spectre.Console;
 
 
-namespace Programation_3_DnD.Engine
+namespace Programation_3_DnD_Core
 {
     public class GameEngine
     {
         //
         private IOutput _renderer;
-
-        private ConsoleKey _lastKey;
+        private IInput _inputProcessor;
 
         private bool _shouldQuit = false;
 
@@ -28,18 +17,16 @@ namespace Programation_3_DnD.Engine
         private GameManager _gameManager;
         private EventManager _eventManager;
 
-        Stopwatch _stopWatch;
-
         private float _time;
 
-        private List<string> _uiMessages = new();
+        private List<string> _uiMessages = new List<string>();
 
         private string _path;
 
         //
-        public GameEngine(IOutput renderer, string path)
+        public GameEngine(IOutput renderer, IInput inputProcessor, string path)
         {
-            _stopWatch = new Stopwatch();
+            _inputProcessor = inputProcessor;
 
             _path = path;
 
@@ -59,42 +46,6 @@ namespace Programation_3_DnD.Engine
         {
             _shouldQuit = true;
         }
-        public void Run()
-        {
-            const float MAX_MS = 330f;
-
-            float lag = 0;
-
-            float last_time = 0;
-
-            _stopWatch.Start();
-
-            while (!_shouldQuit)
-            {
-                float current_time = GetCurrentTime();
-                float elapsed_time = current_time - last_time;
-
-                lag += elapsed_time;
-
-                ProcessInput();
-
-                while (lag >= MAX_MS)
-                {
-                    _time += MAX_MS / 1000;
-                    if (_time > 24)
-                    {
-                        _time -= 24;
-                    }
-                    FixedUpdate(_time);
-                    lag -= MAX_MS;
-                }
-
-                Update();
-                Render();
-
-                last_time = current_time;
-            }
-        }
         public void Work()
         {
             _time += 6;
@@ -107,12 +58,13 @@ namespace Programation_3_DnD.Engine
         {
             _uiMessages.Add(message);
         }
+        //
+        public void AddTime(float time_to_add)
+        {
+            _time += time_to_add;
+        }
 
         //
-        private float GetCurrentTime()
-        {
-            return (float)_stopWatch.Elapsed.TotalMilliseconds;
-        }
         public IReadOnlyList<string> GetUIMessages()
         {
             return _uiMessages;
@@ -129,28 +81,25 @@ namespace Programation_3_DnD.Engine
         {
             return _eventManager;
         }
-
+        public bool GetShouldQuit() { return _shouldQuit; }
+        public float GetTime() { return _time; }
         //
-        private void ProcessInput()
+        public void ProcessInput()
         {
-            if (Console.KeyAvailable)
-            {
-                _lastKey = Console.ReadKey(true).Key;
-            }
+            _inputProcessor.ProcessInput();
 
-            if(_lastKey != ConsoleKey.None)
+            if(!_inputProcessor.IsKeyNone())
             {
-                _gameStateMachine.ProcessInput(_lastKey);
+                _gameStateMachine.TreatInput(_inputProcessor);
 
                 if (_gameStateMachine.GetCurrentState() is InGameState)
                 {
-                    _gameManager.ProcessInput(_lastKey);
+                    _gameManager.TreatInput(_inputProcessor);
                 }
             }
-
-            _lastKey = ConsoleKey.None;
+            _inputProcessor.ResetInput();
         }
-        private void Update()
+        public void Update()
         {
             _eventManager.Update();
 
@@ -161,7 +110,7 @@ namespace Programation_3_DnD.Engine
                 _gameManager.Update();
             }
         }
-        private void FixedUpdate(float time)
+        public void FixedUpdate(float time)
         {
             _gameStateMachine.FixedUpdate(time);
 
@@ -170,7 +119,7 @@ namespace Programation_3_DnD.Engine
                 _gameManager.FixedUpdate(time);
             }
         }
-        private void Render()
+        public void Render()
         {
             _renderer.BeginFrame();
 

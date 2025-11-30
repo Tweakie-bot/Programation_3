@@ -1,13 +1,13 @@
-﻿using System.Collections.Generic;
-using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
-namespace Programation_3_DnD.Data
+namespace Programation_3_DnD_Core
 {
     public class PlayerData
     {
         //
-        [JsonInclude] private string _name;
-        [JsonInclude] private List<PlayerItemEntry> _inventory;
+        [JsonProperty ("_name")] private string _name;
+        [JsonProperty ("_inventory")] private List<PlayerItemEntry> _inventory;
 
         //
         public PlayerData() { }
@@ -20,8 +20,8 @@ namespace Programation_3_DnD.Data
 
     public class PlayerItemEntry
     {
-        [JsonInclude] private string _itemName;
-        [JsonInclude] private int _count;
+        [JsonProperty ("_itemName")] private string _itemName;
+        [JsonProperty ("_count")] private int _count;
 
         //
         public PlayerItemEntry() { }

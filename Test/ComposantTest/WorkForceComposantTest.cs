@@ -1,5 +1,4 @@
-﻿using NUnit.Framework;
-using Programation_3_DnD.Composants;
+﻿using Programation_3_DnD_Core;
 
 namespace Test.ComposantTest
 {

@@ -1,16 +1,16 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text.Json;
 
-namespace Programation_3_DnD.Data
+namespace Programation_3_DnD_Core
 {
     public static class DataManager
     {
-        private static readonly JsonSerializerOptions _options = new JsonSerializerOptions
+        private static readonly JsonSerializerSettings _settings = new JsonSerializerSettings
         {
-            IncludeFields = true,
-            PropertyNameCaseInsensitive = true
+            MissingMemberHandling = MissingMemberHandling.Ignore,
+            NullValueHandling = NullValueHandling.Include
         };
 
         public static T Load<T>(string path)
@@ -22,27 +22,27 @@ namespace Programation_3_DnD.Data
 
             string json = File.ReadAllText(path);
 
-            return JsonSerializer.Deserialize<T>(json, _options);
+            return JsonConvert.DeserializeObject<T>(json, _settings);
         }
 
-        public static List<T> LoadAll<T>(string folderPath)
+        public static List<T> LoadAll<T>(string folder_path)
         {
-            if (!Path.IsPathRooted(folderPath))
-                throw new Exception("Le chemin fourni doit être absolu : " + folderPath);
+            if (!Path.IsPathRooted(folder_path))
+                throw new Exception("Le chemin fourni doit être absolu : " + folder_path);
 
-            if (!Directory.Exists(folderPath))
-                throw new Exception("Dossier introuvable : " + folderPath);
+            if (!Directory.Exists(folder_path))
+                throw new Exception("Dossier introuvable : " + folder_path);
 
             List<T> list = new List<T>();
-            string[] files = Directory.GetFiles(folderPath, "*.json");
+            string[] files = Directory.GetFiles(folder_path, "*.json");
 
             foreach (var file in files)
             {
                 string json = File.ReadAllText(file);
-                T obj = JsonSerializer.Deserialize<T>(json, _options);
+                T objet = JsonConvert.DeserializeObject<T>(json, _settings);
 
-                if (obj != null)
-                    list.Add(obj);
+                if (objet != null)
+                    list.Add(objet);
             }
 
             return list;

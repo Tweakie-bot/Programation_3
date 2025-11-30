@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Programation_3_DnD.Composants
+namespace Programation_3_DnD_Core
 {
     public class IDComposant : Composant
     {
@@ -24,7 +20,7 @@ namespace Programation_3_DnD.Composants
         }
 
         // Logique
-        public override void ProcessInput(ConsoleKey key) { }
+        public override void TreatInput(IInput input) { }
         public override void Update() { }
         public override void FixedUpdate(float time) { }
         public override void Render() { }

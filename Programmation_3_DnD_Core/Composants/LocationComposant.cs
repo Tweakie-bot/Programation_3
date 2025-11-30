@@ -1,18 +1,8 @@
-﻿using Programation_3_DnD.Interface;
-using Programation_3_DnD.Manager;
-using Programation_3_DnD.Objects;
-using Spectre.Console.Rendering;
-using Spectre.Console;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Programation_3_DnD.State;
-using Programation_3_DnD.Data;
-using System.Security.Cryptography.X509Certificates;
 
-namespace Programation_3_DnD.Composants
+namespace Programation_3_DnD_Core
 {
     public class LocationComposant : Composant
     {
@@ -96,24 +86,15 @@ namespace Programation_3_DnD.Composants
             return copy;
         }
         // Logique
-        public override void ProcessInput(ConsoleKey key)
+        public override void TreatInput(IInput input_manager)
         {
-            if (key == ConsoleKey.Escape && _previousLocation != null)
+            if (input_manager.IsKeyCancel() && _previousLocation != null)
             {
                 _gameManager.GetPlayer().SetCurrentLocation(_previousLocation);
                 return;
             }
 
-            int input = 0;
-
-            if (key >= ConsoleKey.D1 && key <= ConsoleKey.D9)
-            {
-                input = (int)(key - ConsoleKey.D0);
-            }
-            else if (key >= ConsoleKey.NumPad1 && key <= ConsoleKey.NumPad9)
-            {
-                input = (int)(key - ConsoleKey.NumPad0);
-            }
+            int input = input_manager.GetNumberPressed();
 
             if (input != 0)
             {
@@ -127,7 +108,7 @@ namespace Programation_3_DnD.Composants
             {
                 for (int i = 0; i < _characters.Count; i++)
                 {
-                    _characters[i].ProcessInput(key);
+                    _characters[i].TreatInput(input_manager);
                 }
             }
         }

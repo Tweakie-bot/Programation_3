@@ -1,19 +1,14 @@
-﻿using NUnit.Framework;
-using Programation_3_DnD.Engine;
-using Programation_3_DnD.Event;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Objects;
-using Programation_3_DnD.State;
-using Programation_3_DnD.Composants;
-using System;
-using Programation_3_DnD.Manager;
-using Programation_3_DnD.Output;
+﻿
+using Programation_3_DnD_Core;
+using Programation_3_DnD_Console;
 
 namespace Test.StateTest
 {
     public class EntityStateMachineTest
     {
         private IOutput _renderer;
+        private InputProcessor _inputProcessor;
+
         private GameEngine _engine;
         private EventManager _eventManager;
         private GameStateMachine _gameStateMachine;
@@ -28,7 +23,9 @@ namespace Test.StateTest
             string path = Path.Combine(TestContext.CurrentContext.TestDirectory, "JsonTest");
 
             _renderer = new OutputManagerForTests();
-            _engine = new GameEngine(_renderer, path);
+            _inputProcessor = new InputProcessor();
+
+            _engine = new GameEngine(_renderer, _inputProcessor, path);
             _eventManager = _engine.GetEventManager();
 
             _gameManager = _engine.GetGameManager();
@@ -55,7 +52,11 @@ namespace Test.StateTest
         [Test]
         public void TryProcessInputWithoutEnabledStates()
         {
-            Assert.DoesNotThrow(() => { _entityStateMachine.ProcessInput(ConsoleKey.A); });
+            Assert.DoesNotThrow(() => 
+            {
+                _inputProcessor.ChangeLastKeyForTests(ConsoleKey.A);
+                _entityStateMachine.TreatInput(_inputProcessor);
+            });
         }
 
         [Test]

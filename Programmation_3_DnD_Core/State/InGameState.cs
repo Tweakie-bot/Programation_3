@@ -1,17 +1,7 @@
-﻿using Programation_3_DnD.Manager;
-using Programation_3_DnD.Interface;
+﻿
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Programation_3_DnD.Engine;
-using Programation_3_DnD.Objects;
-using Spectre.Console;
-using Programation_3_DnD.Composants;
-using Spectre.Console.Rendering;
 
-namespace Programation_3_DnD.State
+namespace Programation_3_DnD_Core
 {
     public class InGameState : IState
     {
@@ -38,9 +28,9 @@ namespace Programation_3_DnD.State
         //
         public void Enter() { }
         public void Exit() { }
-        public void ProcessInput(ConsoleKey key)
+        public void TreatInput(IInput input_manager)
         {
-            if (key == ConsoleKey.P) 
+            if (input_manager.IsKeyPause()) 
             {
                 _gameStateMachine.SetState(_gameStateMachine.GetState(typeof(PauseMenuState)));
             }

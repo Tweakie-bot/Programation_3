@@ -1,12 +1,8 @@
-﻿using Programation_3_DnD.Composants;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Objects;
-using Programation_3_DnD.State;
-using Spectre.Console;
+﻿
 using System;
 using System.Collections.Generic;
 
-namespace Programation_3_DnD
+namespace Programation_3_DnD_Core
 {
     public class BuyingState : IState
     {
@@ -134,13 +130,13 @@ namespace Programation_3_DnD
         //
         public void Enter() { }
         public void Exit() { }
-        public void ProcessInput(ConsoleKey key)
+        public void TreatInput(IInput input_manager)
         {
-            if (key == ConsoleKey.Escape)
+            if (input_manager.IsKeyCancel())
             {
                 _shouldExit = true;
             }
-            else if (key == ConsoleKey.UpArrow)
+            else if (input_manager.IsKeyUp())
             {
                 if (_items.Count > 0)
                 {
@@ -151,7 +147,7 @@ namespace Programation_3_DnD
                     }
                 }
             }
-            else if (key == ConsoleKey.DownArrow)
+            else if (input_manager.IsKeyDown())
             {
                 if (_items.Count > 0)
                 {
@@ -162,7 +158,7 @@ namespace Programation_3_DnD
                     }
                 }
             }
-            else if (key == ConsoleKey.Enter)
+            else if (input_manager.IsKeyValidate())
             {
                 TryBuySelectedItem();
             }
@@ -171,8 +167,7 @@ namespace Programation_3_DnD
         {
             if (_shouldExit)
             {
-                _gameStateMachine.SetState(
-                    new TradingState(_gameStateMachine, _renderer, _playerGameObject, _merchantGameObject));
+                _gameStateMachine.SetState(new TradingState(_gameStateMachine, _renderer, _playerGameObject, _merchantGameObject));
                 return;
             }
 
@@ -186,45 +181,5 @@ namespace Programation_3_DnD
         {
            _renderer.RenderBuyingState(this);
         }
-
-
-        /*
-        public void Render()
-        {
-            _renderer.WriteLine("=== Acheter ===");
-
-            int playerGold = _playerInventory.GetCount("Gold");
-            int merchantGold = _merchantInventory.GetCount("Gold");
-
-            _renderer.WriteLine("Votre or    : " + playerGold + " Gold");
-            _renderer.WriteLine("Or marchand : " + merchantGold + " Gold");
-            _renderer.PassLine();
-
-            if (_items.Count == 0)
-            {
-                _renderer.WriteLine("Le marchand n'a rien à vendre.");
-            }
-            else
-            {
-                _renderer.WriteLine("Choisissez un objet (↑/↓), [ENTER] pour acheter :");
-                _renderer.PassLine();
-
-                for (int i = 0; i < _items.Count; i++)
-                {
-                    ItemComposant item = _items[i];
-                    string prefix = (i == _selectedIndex) ? "> " : "  ";
-
-                    int quantity = _merchantInventory.GetCount(item.GetName());
-
-                    _renderer.WriteLine(prefix + item.GetName()
-                        + " x" + quantity
-                        + " (Prix : " + item.GetPrice() + " Gold)");
-                }
-            }
-
-            _renderer.PassLine();
-            _renderer.WriteLine("[ENTER] Acheter    [ESC] Retour");
-        }
-        */
     }
 }

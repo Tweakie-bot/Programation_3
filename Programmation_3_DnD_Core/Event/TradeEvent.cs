@@ -1,13 +1,8 @@
-﻿using Programation_3_DnD.Interface;
-using Programation_3_DnD.Objects;
-using Programation_3_DnD.State;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Programation_3_DnD.Event
+namespace Programation_3_DnD_Core
 {
     public class TradeEvent : Event
     {

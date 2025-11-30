@@ -1,9 +1,5 @@
-﻿using NUnit.Framework;
-using Programation_3_DnD.Composants;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Manager;
-using Programation_3_DnD.Output;
-using System;
+﻿using Programation_3_DnD_Core;
+using Programation_3_DnD_Console;
 
 namespace Test.ComposantTest
 {
@@ -168,11 +164,10 @@ namespace Test.ComposantTest
             Assert.Pass();
         }
 
-        //
         [Test]
         public void TryProcessInputNoCrash()
         {
-            _inventory.ProcessInput(ConsoleKey.A);
+            _inventory.TreatInput(new InputProcessor());
             Assert.Pass();
         }
 

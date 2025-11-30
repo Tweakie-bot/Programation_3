@@ -1,6 +1,5 @@
-﻿using NUnit.Framework;
-using Programation_3_DnD.Data;
-using System.Text.Json;
+﻿using Newtonsoft.Json;
+using Programation_3_DnD_Core;
 
 public class WeaponDataTest
 {
@@ -17,7 +16,7 @@ public class WeaponDataTest
           ""_damage"": 25
         }";
 
-        _data = JsonSerializer.Deserialize<WeaponData>(json);
+        _data = JsonConvert.DeserializeObject<WeaponData>(json);
     }
 
     [Test]

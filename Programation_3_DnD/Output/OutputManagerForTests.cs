@@ -1,14 +1,6 @@
-﻿using Programation_3_DnD.Composants;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.State;
-using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Programation_3_DnD_Core;
 
-namespace Programation_3_DnD.Output
+namespace Programation_3_DnD_Console
 {
     public class OutputManagerForTests : IOutput
     {

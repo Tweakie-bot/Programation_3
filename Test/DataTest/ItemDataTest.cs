@@ -1,7 +1,5 @@
-﻿using NUnit.Framework;
-using Programation_3_DnD.Data;
-using System.Text.Json;
-
+﻿using Newtonsoft.Json;
+using Programation_3_DnD_Core;
 public class ItemDataTest
 {
     private ItemData _data;
@@ -16,7 +14,7 @@ public class ItemDataTest
           ""_number"": 3
         }";
 
-        _data = JsonSerializer.Deserialize<ItemData>(json);
+        _data = JsonConvert.DeserializeObject<ItemData>(json);
     }
 
     [Test]

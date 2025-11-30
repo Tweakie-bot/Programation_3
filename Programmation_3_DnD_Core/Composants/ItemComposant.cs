@@ -1,37 +1,39 @@
-﻿using Programation_3_DnD.Composants;
-using Programation_3_DnD.Data;
+﻿using System;
 
-public class ItemComposant : Composant
+namespace Programation_3_DnD_Core
 {
-    // Variables
-    private string _name;
-    private int _valueInGold;
+    public class ItemComposant : Composant
+    {
+        // Variables
+        private string _name;
+        private int _valueInGold;
 
-    // Constructeurs
-    public ItemComposant(string name, int value)
-    {
-        _name = name;
-        _valueInGold = value;
-    }
-    public ItemComposant(ItemData item)
-    {
-        _name = item.GetName();
-        _valueInGold = item.GetValueInGold();
-    }
+        // Constructeurs
+        public ItemComposant(string name, int value)
+        {
+            _name = name;
+            _valueInGold = value;
+        }
+        public ItemComposant(ItemData item)
+        {
+            _name = item.GetName();
+            _valueInGold = item.GetValueInGold();
+        }
 
-    // Getters
-    public string GetName()
-    {
-        return _name;
-    }
-    public int GetPrice()
-    {
-        return _valueInGold;
-    }
+        // Getters
+        public string GetName()
+        {
+            return _name;
+        }
+        public int GetPrice()
+        {
+            return _valueInGold;
+        }
 
-    // Logique
-    public override void ProcessInput(ConsoleKey key) { }
-    public override void Update() { }
-    public override void FixedUpdate(float t) { }
-    public override void Render() { }
+        // Logique
+        public override void TreatInput(IInput input) { }
+        public override void Update() { }
+        public override void FixedUpdate(float t) { }
+        public override void Render() { }
+    }
 }

@@ -48,3 +48,5 @@ C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Progr
 C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\obj\Release\net8.0\Programation_3_DnD_Console.pdb
 C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\obj\Release\net8.0\Programation_3_DnD_Console.genruntimeconfig.cache
 C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\obj\Release\net8.0\ref\Programation_3_DnD_Console.dll
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\bin\Release\net8.0\Packable.dll
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\bin\Release\net8.0\Packable.newtonjson.dll

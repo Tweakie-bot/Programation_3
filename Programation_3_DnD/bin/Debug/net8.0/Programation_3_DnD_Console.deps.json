@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "Programation_3_DnD_Console/1.0.0": {
         "dependencies": {
+          "Packable.newtonjson": "2.0.0",
           "Programmation_3_DnD_Core": "1.0.0",
           "Spectre.Console": "0.54.0",
           "Spectre.Console.Cli": "0.53.0"
@@ -56,6 +57,26 @@
       "OpenCli.Sources/0.5.0": {
         "dependencies": {
           "NJsonSchema": "11.4.0"
+        }
+      },
+      "Packable/6.2.0": {
+        "runtime": {
+          "lib/netcoreapp2.2/Packable.dll": {
+            "assemblyVersion": "0.6.2.0",
+            "fileVersion": "0.1.0.0"
+          }
+        }
+      },
+      "Packable.newtonjson/2.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "Packable": "6.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Packable.newtonjson.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
         }
       },
       "Spectre.Console/0.54.0": {
@@ -112,7 +133,7 @@
       },
       "Programmation_3_DnD_Core/1.0.0": {
         "dependencies": {
-          "Spectre.Console": "0.54.0"
+          "Packable.newtonjson": "2.0.0"
         },
         "runtime": {
           "Programmation_3_DnD_Core.dll": {
@@ -163,6 +184,20 @@
       "sha512": "sha512-5FgwoxpZy9Qy7MsKHb2hZBTWXEvg7JCPuNnaqsn2g0/X9oWQVThYQ1nND1xJrq8P1aw+Gh8sirV1HbefeqSalw==",
       "path": "opencli.sources/0.5.0",
       "hashPath": "opencli.sources.0.5.0.nupkg.sha512"
+    },
+    "Packable/6.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZXdZF5AbQD7iuNXiCPgphoyjoMRQEj9/KLShkv4kmQeaEl7w38365KyP8C+y1rRDMAe4fJvA88//aaBqBvD8Sg==",
+      "path": "packable/6.2.0",
+      "hashPath": "packable.6.2.0.nupkg.sha512"
+    },
+    "Packable.newtonjson/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RVOiNvByTU+NXyVA2Kp5nP5Kwu5Twe+ALOYdXuE23HXZVMWbeobYhB++UkdFB6NRKuUvgTyC5P+d9p3ONnj5oA==",
+      "path": "packable.newtonjson/2.0.0",
+      "hashPath": "packable.newtonjson.2.0.0.nupkg.sha512"
     },
     "Spectre.Console/0.54.0": {
       "type": "package",

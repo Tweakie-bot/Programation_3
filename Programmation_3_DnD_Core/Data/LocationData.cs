@@ -1,19 +1,18 @@
-﻿using System;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
-namespace Programation_3_DnD.Data
+namespace Programation_3_DnD_Core
 {
     public class LocationData
     {
         //
-        [JsonInclude] private string _name { get; set; }
-        [JsonInclude] private string _description { get; set; }
-        [JsonInclude] private List<string> _nextLocations { get; set; }
-        [JsonInclude] private List<string> _characters { get; set; }
+        [JsonProperty ("_name")] private string _name { get; set; }
+        [JsonProperty ("_description")] private string _description { get; set; }
+        [JsonProperty ("_nextLocations")] private List<string> _nextLocations { get; set; }
+        [JsonProperty ("_characters")] private List<string> _characters { get; set; }
+
+        //
+        public LocationData() { }
 
         //
         public string GetName() { return _name; }

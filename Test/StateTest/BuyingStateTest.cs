@@ -1,18 +1,11 @@
-﻿using NUnit.Framework;
-using Programation_3_DnD;
-using Programation_3_DnD.Composants;
-using Programation_3_DnD.Engine;
-using Programation_3_DnD.Event;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Manager;
-using Programation_3_DnD.Objects;
-using Programation_3_DnD.State;
-using Programation_3_DnD.Output;
-using System;
+﻿using Programation_3_DnD_Core;
+using Programation_3_DnD_Console;
 
 public class BuyingStateTest
 {
     private IOutput _renderer;
+    private InputProcessor _inputProcessor;
+
     private GameEngine _engine;
     private EventManager _eventManager;
     private GameManager _gameManager;
@@ -28,7 +21,9 @@ public class BuyingStateTest
         string path = Path.Combine(TestContext.CurrentContext.TestDirectory, "JsonTest");
 
         _renderer = new OutputManagerForTests();
-        _engine = new GameEngine(_renderer, path);
+        _inputProcessor = new InputProcessor();
+
+        _engine = new GameEngine(_renderer, _inputProcessor, path);
         _eventManager = _engine.GetEventManager();
         _gameManager = _engine.GetGameManager();
         _gameStateMachine = _engine.GetGameStateMachine();
@@ -53,21 +48,24 @@ public class BuyingStateTest
     [Test]
     public void TryNoCrashGoingDown()
     {
-        _state.ProcessInput(ConsoleKey.DownArrow);
+        _inputProcessor.ChangeLastKeyForTests(ConsoleKey.DownArrow);
+        _state.TreatInput(_inputProcessor);
         Assert.Pass();
     }
 
     [Test]
     public void TryNoCrashGoingUp()
     {
-        _state.ProcessInput(ConsoleKey.UpArrow);
+        _inputProcessor.ChangeLastKeyForTests(ConsoleKey.UpArrow);
+        _state.TreatInput(_inputProcessor);
         Assert.Pass();
     }
 
     [Test]
     public void TryMerchantStockChanged()
     {
-        _state.ProcessInput(ConsoleKey.Enter);
+        _inputProcessor.ChangeLastKeyForTests(ConsoleKey.Enter);
+        _state.TreatInput(_inputProcessor);
 
         InventoryComposant merchant_inventory = _merchant.GetComposant<InventoryComposant>();
         Assert.AreEqual(2, merchant_inventory.GetCount("Potion de soin"));
@@ -76,7 +74,8 @@ public class BuyingStateTest
     [Test]
     public void TryGoldTransfer()
     {
-        _state.ProcessInput(ConsoleKey.Enter);
+        _inputProcessor.ChangeLastKeyForTests(ConsoleKey.Enter);
+        _state.TreatInput(_inputProcessor);
 
         InventoryComposant player_inventory = _player.GetComposant<InventoryComposant>();
         InventoryComposant merchant_inventory = _merchant.GetComposant<InventoryComposant>();
@@ -91,7 +90,8 @@ public class BuyingStateTest
         InventoryComposant player_inventory = _player.GetComposant<InventoryComposant>();
         player_inventory.RemoveByName("Gold", 100);
 
-        _state.ProcessInput(ConsoleKey.Enter);
+        _inputProcessor.ChangeLastKeyForTests(ConsoleKey.Enter);
+        _state.TreatInput(_inputProcessor);
 
         Assert.AreEqual(2, _merchant.GetComposant<InventoryComposant>().GetCount("Potion de soin"));
     }
@@ -99,7 +99,8 @@ public class BuyingStateTest
     [Test]
     public void TryEscape()
     {
-        _state.ProcessInput(ConsoleKey.Escape);
+        _inputProcessor.ChangeLastKeyForTests(ConsoleKey.Escape);
+        _state.TreatInput(_inputProcessor);
         _state.Update();
 
         Assert.IsInstanceOf<TradingState>(_gameStateMachine.GetCurrentState());

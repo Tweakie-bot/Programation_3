@@ -1,14 +1,9 @@
-﻿using Programation_3_DnD.Composants;
-using Programation_3_DnD.Engine;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Objects;
-using Programation_3_DnD.State;
+﻿using Programation_3_DnD_Core;
 using Spectre.Console;
 using Spectre.Console.Rendering;
 using System.Text;
-using System.Xml.Linq;
 
-namespace Programation_3_DnD.Output
+namespace Programation_3_DnD_Console
 {
     public class OutputManager : IOutput
     {

@@ -1,10 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "Qro/CRNBDJI=",
+  "dgSpecHash": "EEiQxK3nqq0=",
   "success": true,
   "projectFilePath": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Programmation_3_DnD_Core\\Programmation_3_DnD_Core.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Spxrk\\.nuget\\packages\\spectre.console\\0.54.0\\spectre.console.0.54.0.nupkg.sha512"
+    "C:\\Users\\Spxrk\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
+    "C:\\Users\\Spxrk\\.nuget\\packages\\packable\\6.2.0\\packable.6.2.0.nupkg.sha512",
+    "C:\\Users\\Spxrk\\.nuget\\packages\\packable.newtonjson\\2.0.0\\packable.newtonjson.2.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Le package 'Newtonsoft.Json' 12.0.1 présente une vulnérabilité de gravité élevé(e) connue, https://github.com/advisories/GHSA-5crp-9r3c-p9vr.",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.1"
+      ]
+    }
+  ]
 }

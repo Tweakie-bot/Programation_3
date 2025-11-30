@@ -1,18 +1,17 @@
-﻿using NUnit.Framework;
-using Programation_3_DnD.Objects;
-using Programation_3_DnD.Composants;
-using Programation_3_DnD.Manager;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Output;
+﻿using Programation_3_DnD_Core;
+using Programation_3_DnD_Console;
 
 public class GameObjectTest
 {
-    private GameObject _gameObject;
     private IOutput _renderer;
+    private InputProcessor _inputProcessor;
+
+    private GameObject _gameObject;
 
     [SetUp]
     public void Setup()
     {
+        _inputProcessor = new InputProcessor();
         _renderer = new OutputManagerForTests();
         _gameObject = new GameObject();
     }
@@ -55,8 +54,8 @@ public class GameObjectTest
     [Test]
     public void ProcessInputDoesNotCrash()
     {
-        _gameObject.AddComposant(new InventoryComposant(_renderer));
-        _gameObject.ProcessInput(System.ConsoleKey.A);
+        _inputProcessor.ChangeLastKeyForTests(ConsoleKey.A);
+        _gameObject.TreatInput(_inputProcessor);
 
         Assert.Pass();
     }

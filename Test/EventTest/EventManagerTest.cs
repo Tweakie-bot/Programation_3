@@ -1,6 +1,4 @@
-﻿using NUnit.Framework;
-using Programation_3_DnD.Event;
-using System.Runtime.CompilerServices;
+﻿using Programation_3_DnD_Core;
 
 public class EventManagerTest
 {

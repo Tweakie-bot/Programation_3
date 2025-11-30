@@ -1,17 +1,14 @@
-﻿using NUnit.Framework;
-using Programation_3_DnD.Engine;
-using Programation_3_DnD.Event;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Manager;
-using Programation_3_DnD.State;
-using Programation_3_DnD.Output;
-using System;
+﻿
+using Programation_3_DnD_Core;
+using Programation_3_DnD_Console;
 
 namespace Test.StateTest
 {
     public class GameStateMachineTest
     {
         private IOutput _renderer;
+        private InputProcessor _inputProcessor;
+
         private GameEngine _engine;
         private EventManager _eventManager;
         private GameManager _gameManager;
@@ -23,7 +20,9 @@ namespace Test.StateTest
             string path = Path.Combine(TestContext.CurrentContext.TestDirectory, "JsonTest");
 
             _renderer = new OutputManagerForTests();
-            _engine = new GameEngine(_renderer, path);
+            _inputProcessor = new InputProcessor();
+
+            _engine = new GameEngine(_renderer, _inputProcessor, path);
             _eventManager = _engine.GetEventManager();
             _gameManager = _engine.GetGameManager();
             _gameStateMachine = _engine.GetGameStateMachine();
@@ -54,7 +53,11 @@ namespace Test.StateTest
         [Test]
         public void ProcessInputDelegatesToCurrentState()
         {
-            Assert.DoesNotThrow(() => { _gameStateMachine.ProcessInput(ConsoleKey.A); });
+            Assert.DoesNotThrow(() => 
+            {
+                _inputProcessor.ChangeLastKeyForTests(ConsoleKey.A);
+                _gameStateMachine.TreatInput(_inputProcessor);
+            });
         }
 
         [Test]

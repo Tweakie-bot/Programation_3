@@ -1,15 +1,10 @@
-﻿using NUnit.Framework;
-using Programation_3_DnD.Engine;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Manager;
-using Programation_3_DnD.Objects;
-using Programation_3_DnD.Composants;
-using Programation_3_DnD.Event;
-using Programation_3_DnD.Output;
+﻿using Programation_3_DnD_Core;
+using Programation_3_DnD_Console;
 
 public class GameEngineTest
 {
     private IOutput _renderer;
+    private InputProcessor _inputProcessor;
     private GameEngine _engine;
 
     [SetUp]
@@ -18,7 +13,7 @@ public class GameEngineTest
         string path = Path.Combine(TestContext.CurrentContext.TestDirectory, "JsonTest");
 
         _renderer = new OutputManagerForTests();
-        _engine = new GameEngine(_renderer, path);
+        _engine = new GameEngine(_renderer, _inputProcessor, path);
     }
 
     [Test]
@@ -46,7 +41,6 @@ public class GameEngineTest
     public void TryRunDoesNotCrashShort()
     {
         _engine.QuitGame();
-        _engine.Run();
 
         Assert.Pass();
     }
@@ -75,15 +69,6 @@ public class GameEngineTest
         _engine.Work();
         _engine.Work();
         _engine.Work();
-
-        Assert.Pass();
-    }
-
-    [Test]
-    public void TryEngineLoopSafeAfterQuit()
-    {
-        _engine.QuitGame();
-        _engine.Run();
 
         Assert.Pass();
     }

@@ -1,21 +1,22 @@
-﻿using NUnit.Framework;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Manager;
-using Programation_3_DnD.State;
-using Programation_3_DnD.Output;
-using System;
+﻿
+using Programation_3_DnD_Core;
+using Programation_3_DnD_Console;
 
 namespace Test.StateTest
 {
     public class DoesNotProposeWorkEntityStateTest
     {
         private IOutput _renderer;
+        private InputProcessor _inputProcessor;
+
         private DoesNotProposeWorkEntityState _state;
 
         [SetUp]
         public void Setup()
         {
             _renderer = new OutputManagerForTests();
+            _inputProcessor = new InputProcessor();
+
             _state = new DoesNotProposeWorkEntityState(_renderer);
         }
 
@@ -34,7 +35,11 @@ namespace Test.StateTest
         [Test]
         public void TryProcessInputDoesNotCrash()
         {
-            Assert.DoesNotThrow(() => { _state.ProcessInput(ConsoleKey.A); });
+            Assert.DoesNotThrow(() => 
+            {
+                _inputProcessor.ChangeLastKeyForTests(ConsoleKey.A);
+                _state.TreatInput(_inputProcessor);
+            });
         }
 
         [Test]

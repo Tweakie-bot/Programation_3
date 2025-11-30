@@ -1,13 +1,7 @@
-﻿using Programation_3_DnD.Event;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Objects;
+﻿
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Programation_3_DnD.State
+namespace Programation_3_DnD_Core
 {
     public class ProposeTradeEntityState : IEntityState
     {
@@ -30,9 +24,9 @@ namespace Programation_3_DnD.State
         //
         public void Enter() { }
         public void Exit() { }
-        public void ProcessInput(ConsoleKey key)
+        public void TreatInput(IInput input_manager)
         {
-            if (key == ConsoleKey.T)
+            if (input_manager.IsKeyTrade())
             {
                 _eventManager.RegisterEvent(new TradeEvent(_gameStateMachine, _renderer, _playerGameObject, _merchantGameObject));
             }

@@ -72,6 +72,28 @@
           }
         }
       },
+      "Packable/6.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.2/Packable.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.2/Packable.dll": {}
+        }
+      },
+      "Packable.newtonjson/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1",
+          "Packable": "6.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Packable.newtonjson.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Packable.newtonjson.dll": {}
+        }
+      },
       "Spectre.Console/0.54.0": {
         "type": "package",
         "compile": {
@@ -136,9 +158,9 @@
       },
       "Programmation_3_DnD_Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "Spectre.Console": "0.54.0"
+          "Packable.newtonjson": "2.0.0"
         },
         "compile": {
           "bin/placeholder/Programmation_3_DnD_Core.dll": {}
@@ -321,6 +343,32 @@
         "opencli.sources.nuspec"
       ]
     },
+    "Packable/6.2.0": {
+      "sha512": "ZXdZF5AbQD7iuNXiCPgphoyjoMRQEj9/KLShkv4kmQeaEl7w38365KyP8C+y1rRDMAe4fJvA88//aaBqBvD8Sg==",
+      "type": "package",
+      "path": "packable/6.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/Packable.dll",
+        "lib/netcoreapp2.2/Packable.dll",
+        "lib/netstandard2.0/Packable.dll",
+        "packable.6.2.0.nupkg.sha512",
+        "packable.nuspec"
+      ]
+    },
+    "Packable.newtonjson/2.0.0": {
+      "sha512": "RVOiNvByTU+NXyVA2Kp5nP5Kwu5Twe+ALOYdXuE23HXZVMWbeobYhB++UkdFB6NRKuUvgTyC5P+d9p3ONnj5oA==",
+      "type": "package",
+      "path": "packable.newtonjson/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Packable.newtonjson.dll",
+        "packable.newtonjson.2.0.0.nupkg.sha512",
+        "packable.newtonjson.nuspec"
+      ]
+    },
     "Spectre.Console/0.54.0": {
       "sha512": "StDXCFayfy0yB1xzUHT2tgEpV1/HFTiS4JgsAQS49EYTfMixSwwucaQs/bIOCwXjWwIQTMuxjUIxcB5XsJkFJA==",
       "type": "package",
@@ -399,6 +447,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Packable.newtonjson >= 2.0.0",
       "Programmation_3_DnD_Core >= 1.0.0",
       "Spectre.Console >= 0.54.0",
       "Spectre.Console.Cli >= 0.53.0"
@@ -458,6 +507,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Packable.newtonjson": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
           "Spectre.Console": {
             "target": "Package",
             "version": "[0.54.0, )"

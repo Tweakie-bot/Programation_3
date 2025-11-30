@@ -1,19 +1,13 @@
-﻿using NUnit.Framework;
-using Programation_3_DnD.Composants;
-using Programation_3_DnD.Engine;
-using Programation_3_DnD.Event;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Manager;
-using Programation_3_DnD.Objects;
-using Programation_3_DnD.State;
-using Programation_3_DnD.Output;
-using System;
+﻿using Programation_3_DnD_Core;
+using Programation_3_DnD_Console;
 
 namespace Test.ComposantTest
 {
     public class LocationComposantTest
     {
         private IOutput _renderer;
+        private InputProcessor _inputProcessor;
+
         private GameEngine _engine;
         private EventManager _eventManager;
         private GameManager _gameManager;
@@ -28,9 +22,10 @@ namespace Test.ComposantTest
         public void Setup()
         {
             string path = Path.Combine(TestContext.CurrentContext.TestDirectory, "JsonTest");
+            _inputProcessor = new InputProcessor();
 
             _renderer = new OutputManagerForTests();
-            _engine = new GameEngine(_renderer, path);
+            _engine = new GameEngine(_renderer, _inputProcessor, path);
             _eventManager = _engine.GetEventManager();
             _gameManager = _engine.GetGameManager();
             _machine = _engine.GetGameStateMachine();
@@ -57,7 +52,9 @@ namespace Test.ComposantTest
         [Test]
         public void MoveToFirstLocation()
         {
-            _locationA.ProcessInput(ConsoleKey.D1);
+
+            _inputProcessor.ChangeLastKeyForTests(ConsoleKey.D1);
+            _locationA.TreatInput(_inputProcessor);
 
             PositionComposant position = _player.GetComposant<PositionComposant>();
             Assert.AreEqual("Forest", position.GetCurrentLocation().GetName());
@@ -66,7 +63,8 @@ namespace Test.ComposantTest
         [Test]
         public void MoveToSecondLocation_WithKey2()
         {
-            _locationA.ProcessInput(ConsoleKey.D2);
+            _inputProcessor.ChangeLastKeyForTests(ConsoleKey.D2);
+            _locationA.TreatInput(_inputProcessor);
 
             PositionComposant position = _player.GetComposant<PositionComposant>();
             Assert.AreEqual("Cave", position.GetCurrentLocation().GetName());
@@ -75,10 +73,13 @@ namespace Test.ComposantTest
         [Test]
         public void EscapeShouldReturnToPreviousLocation()
         {
-            _locationA.ProcessInput(ConsoleKey.D1);
+            _inputProcessor.ChangeLastKeyForTests(ConsoleKey.D1);
+            _locationA.TreatInput(new InputProcessor());
+
             PositionComposant position = _player.GetComposant<PositionComposant>();
 
-            position.GetCurrentLocation().ProcessInput(ConsoleKey.Escape);
+            _inputProcessor.ChangeLastKeyForTests(ConsoleKey.Enter);
+            position.GetCurrentLocation().TreatInput(_inputProcessor);
 
             Assert.AreEqual("Town", position.GetCurrentLocation().GetName());
         }
@@ -86,7 +87,8 @@ namespace Test.ComposantTest
         [Test]
         public void InvalidKeyDoesNotChangeLocation()
         {
-            _locationA.ProcessInput(ConsoleKey.D9);
+            _inputProcessor.ChangeLastKeyForTests(ConsoleKey.D9);
+            _locationA.TreatInput(new InputProcessor());
 
             PositionComposant position = _player.GetComposant<PositionComposant>();
             Assert.AreEqual("Town", position.GetCurrentLocation().GetName());
@@ -100,7 +102,8 @@ namespace Test.ComposantTest
 
             _locationA.AddCharacter(npc);
 
-            Assert.DoesNotThrow(() => _locationA.ProcessInput(ConsoleKey.A));
+            _inputProcessor.ChangeLastKeyForTests(ConsoleKey.A);
+            Assert.DoesNotThrow(() => _locationA.TreatInput(_inputProcessor));
         }
 
         [Test]

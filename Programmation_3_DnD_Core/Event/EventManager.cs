@@ -1,10 +1,7 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Programation_3_DnD.Event
+namespace Programation_3_DnD_Core
 {
     public class EventManager
     {

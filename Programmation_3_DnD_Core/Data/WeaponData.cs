@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
 
-namespace Programation_3_DnD.Data
+namespace Programation_3_DnD_Core
 {
     public class WeaponData : ItemData
     {
         //
-        [JsonInclude] private int _damage;
+        [JsonProperty ("_damage")] private int _damage;
+
+        //
+        public WeaponData() { }
 
         //
         public int GetDamage() { return _damage; }

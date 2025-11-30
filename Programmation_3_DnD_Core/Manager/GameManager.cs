@@ -1,22 +1,9 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using Programation_3_DnD.Composants;
-using Programation_3_DnD.Engine;
-using Programation_3_DnD.Event;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Objects;
-using Programation_3_DnD.State;
-using Programation_3_DnD.Data;
 using System.IO;
-using static System.Net.WebRequestMethods;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace Programation_3_DnD.Manager
+namespace Programation_3_DnD_Core
 {
     public class GameManager
     {
@@ -145,10 +132,19 @@ namespace Programation_3_DnD.Manager
         }
         private void CreatePlayer(GameObject location)
         {
+            if (location == null)
+            {
+                throw new ArgumentNullException("Game Manager");
+            }
             string file = Path.Combine(_dataPath, "Player", "Player.json");
 
             PlayerData data = DataManager.Load<PlayerData>(file);
 
+            if (_player == null)
+            {
+                throw new ArgumentNullException("Game Manager");
+
+            }
             _player.AddComposant(new PositionComposant(location));
             _player.AddComposant(new IDComposant(data.GetName()));
             _player.AddComposant(new WorkForceComposant());
@@ -237,9 +233,9 @@ namespace Programation_3_DnD.Manager
         }
 
         //
-        public void ProcessInput(ConsoleKey key)
+        public void TreatInput(IInput input_manager)
         {
-            _player.ProcessInput(key);
+            _player.TreatInput(input_manager);
         }
         public void Update()
         {

@@ -1,6 +1,5 @@
-﻿using NUnit.Framework;
-using Programation_3_DnD.Data;
-using System.Text.Json;
+﻿using Newtonsoft.Json;
+using Programation_3_DnD_Core;
 
 public class PlayerDataTest
 {
@@ -24,7 +23,7 @@ public class PlayerDataTest
           ]
         }";
 
-        _data = JsonSerializer.Deserialize<PlayerData>(json);
+        _data = JsonConvert.DeserializeObject<PlayerData>(json);
     }
 
     [Test]

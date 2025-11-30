@@ -1,13 +1,10 @@
-﻿using NUnit.Framework;
-using Programation_3_DnD.Engine;
-using Programation_3_DnD.Event;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Manager;
-using Programation_3_DnD.Output;
+﻿using Programation_3_DnD_Console;
+using Programation_3_DnD_Core;
 
 public class QuitGameEventTest
 {
     private IOutput _renderer;
+    private InputProcessor _inputProcessor;
     private GameEngine _engine;
     private QuitGameEvent _quitEvent;
 
@@ -17,7 +14,9 @@ public class QuitGameEventTest
         string path = Path.Combine(TestContext.CurrentContext.TestDirectory, "JsonTest");
 
         _renderer = new OutputManagerForTests();
-        _engine = new GameEngine(_renderer, path);
+        _inputProcessor = new InputProcessor();
+
+        _engine = new GameEngine(_renderer, _inputProcessor, path);
         _quitEvent = new QuitGameEvent(_engine);
     }
 

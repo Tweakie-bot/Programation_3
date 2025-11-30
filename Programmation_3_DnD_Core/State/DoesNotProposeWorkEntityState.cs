@@ -1,11 +1,7 @@
-﻿using Programation_3_DnD.Interface;
+﻿
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Programation_3_DnD.State
+namespace Programation_3_DnD_Core
 {
     public class DoesNotProposeWorkEntityState : IEntityState
     {
@@ -20,7 +16,7 @@ namespace Programation_3_DnD.State
         //
         public void Enter() { }
         public void Exit() { }
-        public void ProcessInput(ConsoleKey key) { }
+        public void TreatInput(IInput input) { }
         public void Update() { }
         public void FixedUpdate() { }
         public void Render()

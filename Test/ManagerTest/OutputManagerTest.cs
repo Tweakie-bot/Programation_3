@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
-using Programation_3_DnD.Manager;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Output;
+using Programation_3_DnD_Core;
+using Programation_3_DnD_Console;
 using System;
 
 public class OutputManagerTest

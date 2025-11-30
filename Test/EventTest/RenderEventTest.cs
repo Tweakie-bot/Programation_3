@@ -1,8 +1,5 @@
-﻿using NUnit.Framework;
-using Programation_3_DnD.Event;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Manager;
-using Programation_3_DnD.Output;
+﻿using Programation_3_DnD_Core;
+using Programation_3_DnD_Console;
 
 public class RenderEventTest
 {

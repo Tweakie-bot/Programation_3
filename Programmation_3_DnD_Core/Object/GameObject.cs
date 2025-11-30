@@ -1,12 +1,8 @@
-﻿using Programation_3_DnD.Composants;
-using Programation_3_DnD.State;
+﻿
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Programation_3_DnD.Objects
+namespace Programation_3_DnD_Core
 {
     public class GameObject
     {
@@ -59,11 +55,11 @@ namespace Programation_3_DnD.Objects
         }
 
         //
-        public void ProcessInput(ConsoleKey key)
+        public void TreatInput(IInput input_manager)
         {
            foreach(Composant comp in _composantTable)
             {
-                comp.ProcessInput(key);
+                comp.TreatInput(input_manager);
             }
         }
         public void Update()

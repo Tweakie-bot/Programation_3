@@ -1,5 +1,4 @@
-﻿using NUnit.Framework;
-using Programation_3_DnD.Event;
+﻿using Programation_3_DnD_Core;
 
 public class TimedEventTest
 {

@@ -1,14 +1,7 @@
-﻿using Programation_3_DnD.Engine;
-using Programation_3_DnD.Event;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Objects;
+﻿
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Programation_3_DnD.State
+namespace Programation_3_DnD_Core
 {
     public class ProposeWorkEntityState : IEntityState
     {
@@ -29,9 +22,9 @@ namespace Programation_3_DnD.State
         //
         public void Enter() { }
         public void Exit() { }
-        public void ProcessInput(ConsoleKey key)
+        public void TreatInput(IInput input_manager)
         {
-            if (key == ConsoleKey.W)
+            if (input_manager.IsKeyWork())
             {
                 _eventManager.RegisterEvent(new WorkEvent(_engine, _playerGameObject, 10, _renderer, _eventManager));
             }

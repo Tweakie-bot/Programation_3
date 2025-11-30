@@ -1,11 +1,6 @@
-﻿using Programation_3_DnD.Objects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
-namespace Programation_3_DnD.Composants
+namespace Programation_3_DnD_Core
 {
     public class PositionComposant : Composant
     {
@@ -15,6 +10,10 @@ namespace Programation_3_DnD.Composants
         //
         public PositionComposant(GameObject current_location)
         {
+            if (current_location == null)
+            {
+                throw new ArgumentNullException("Debug in Location");
+            }
             _currentLocation = current_location.GetComposant<LocationComposant>();
         }
 
@@ -31,9 +30,9 @@ namespace Programation_3_DnD.Composants
         }
 
         //
-        public override void ProcessInput(ConsoleKey key)
+        public override void TreatInput(IInput input_manager)
         {
-            _currentLocation.ProcessInput(key);
+            _currentLocation.TreatInput(input_manager);
         }
         public override void Update()
         {
@@ -41,7 +40,7 @@ namespace Programation_3_DnD.Composants
         }
         public override void FixedUpdate(float t)
         {
-            _currentLocation?.FixedUpdate(t);
+            _currentLocation.FixedUpdate(t);
         }
         public override void Render()
         {

@@ -1,6 +1,5 @@
-﻿using NUnit.Framework;
-using Programation_3_DnD.Composants;
-using System;
+﻿using Programation_3_DnD_Console;
+using Programation_3_DnD_Core;
 
 namespace Test.ComposantTest
 {
@@ -23,7 +22,7 @@ namespace Test.ComposantTest
         [Test]
         public void TryProcessInputNoCrash()
         {
-            _idComposant.ProcessInput(ConsoleKey.A);
+            _idComposant.TreatInput(new InputProcessor());
             Assert.Pass();
         }
 

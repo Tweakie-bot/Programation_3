@@ -1,17 +1,7 @@
-﻿using Programation_3_DnD.Objects;
+﻿
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-using Programation_3_DnD.Composants;
-using Programation_3_DnD.Interface;
-using System.Resources;
-using Programation_3_DnD.Event;
-using Programation_3_DnD.Engine;
-
-namespace Programation_3_DnD.State
+namespace Programation_3_DnD_Core
 {
     public class EntityStateMachine
     {
@@ -76,16 +66,16 @@ namespace Programation_3_DnD.State
         }
 
         //
-        public void ProcessInput(ConsoleKey key)
+        public void TreatInput(IInput input_manager)
         {
             if (_currentTradingState != null)
             {
-                _currentTradingState.ProcessInput(key);
+                _currentTradingState.TreatInput(input_manager);
             }
 
             if (_currentWorkingState != null)
             {
-                _currentWorkingState.ProcessInput(key);
+                _currentWorkingState.TreatInput(input_manager);
             }
         }
         public void Update()

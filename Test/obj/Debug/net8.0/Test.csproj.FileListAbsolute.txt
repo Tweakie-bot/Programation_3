@@ -151,3 +151,5 @@ C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Test\
 C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Test\bin\Debug\net8.0\Programmation_3_DnD_Core.dll
 C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Test\bin\Debug\net8.0\Programation_3_DnD_Console.pdb
 C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Test\bin\Debug\net8.0\Programmation_3_DnD_Core.pdb
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Test\bin\Debug\net8.0\Packable.dll
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Test\bin\Debug\net8.0\Packable.newtonjson.dll

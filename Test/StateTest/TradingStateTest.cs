@@ -1,21 +1,13 @@
-﻿using NUnit;
-using Programation_3_DnD;
-using Programation_3_DnD.Composants;
-using Programation_3_DnD.Engine;
-using Programation_3_DnD.Event;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Manager;
-using Programation_3_DnD.Objects;
-using Programation_3_DnD.State;
-using Programation_3_DnD.Output;
-using System.Numerics;
-using System.Reflection.PortableExecutable;
+﻿using Programation_3_DnD_Core;
+using Programation_3_DnD_Console;
 
 namespace Test.StateTest
 {
     public class TradingStateTest
     {
         public IOutput _renderer;
+        public InputProcessor _inputProcessor;
+
         public GameEngine _engine;
         public EventManager _eventManager;
         public GameManager _gameManager;
@@ -30,8 +22,9 @@ namespace Test.StateTest
             string path = Path.Combine(TestContext.CurrentContext.TestDirectory, "JsonTest");
 
             _renderer = new OutputManagerForTests();
+            _inputProcessor = new InputProcessor();
 
-            _engine = new GameEngine(_renderer, path);
+            _engine = new GameEngine(_renderer, _inputProcessor, path);
             _eventManager = _engine.GetEventManager();
             _gameManager = _engine.GetGameManager();
 
@@ -53,15 +46,20 @@ namespace Test.StateTest
         [Test]
         public void TryEnteringBuyingState()
         {
-            _tradingState.ProcessInput(ConsoleKey.Enter);
+            _inputProcessor.ChangeLastKeyForTests(ConsoleKey.Enter);
+            _tradingState.TreatInput(_inputProcessor);
+
             Assert.IsInstanceOf<BuyingState>(_gameStateMachine.GetCurrentState());
         }
 
         [Test]
         public void TryEnteringSellingState()
         {
-            _tradingState.ProcessInput(ConsoleKey.DownArrow);
-            _tradingState.ProcessInput(ConsoleKey.Enter);
+            _inputProcessor.ChangeLastKeyForTests(ConsoleKey.DownArrow);
+            _tradingState.TreatInput(_inputProcessor);
+
+            _inputProcessor.ChangeLastKeyForTests(ConsoleKey.Enter);
+            _tradingState.TreatInput(_inputProcessor);
 
             Assert.IsInstanceOf<SellingState>(_gameStateMachine.GetCurrentState());
         }
@@ -69,8 +67,11 @@ namespace Test.StateTest
         [Test]
         public void TryQuittingState()
         {
-            _tradingState.ProcessInput(ConsoleKey.UpArrow);
-            _tradingState.ProcessInput(ConsoleKey.Enter);
+            _inputProcessor.ChangeLastKeyForTests(ConsoleKey.UpArrow);
+            _tradingState.TreatInput(_inputProcessor);
+
+            _inputProcessor.ChangeLastKeyForTests(ConsoleKey.Enter);
+            _tradingState.TreatInput(_inputProcessor);
 
             Assert.IsInstanceOf<InGameState>(_gameStateMachine.GetCurrentState());
         }
@@ -78,10 +79,17 @@ namespace Test.StateTest
         [Test]
         public void Navigation()
         {
-            _tradingState.ProcessInput(ConsoleKey.DownArrow);
-            _tradingState.ProcessInput(ConsoleKey.DownArrow);
-            _tradingState.ProcessInput(ConsoleKey.DownArrow);
-            _tradingState.ProcessInput(ConsoleKey.Enter);
+            _inputProcessor.ChangeLastKeyForTests(ConsoleKey.DownArrow);
+            _tradingState.TreatInput(_inputProcessor);
+
+            _inputProcessor.ChangeLastKeyForTests(ConsoleKey.DownArrow);
+            _tradingState.TreatInput(_inputProcessor);
+
+            _inputProcessor.ChangeLastKeyForTests(ConsoleKey.DownArrow);
+            _tradingState.TreatInput(_inputProcessor);
+
+            _inputProcessor.ChangeLastKeyForTests(ConsoleKey.Enter);
+            _tradingState.TreatInput(_inputProcessor);
 
             Assert.IsInstanceOf<BuyingState>(_gameStateMachine.GetCurrentState());
         }

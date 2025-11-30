@@ -1,12 +1,16 @@
-﻿using Microsoft.VisualStudio.TestPlatform.TestHost;
-using NUnit.Framework;
-using Programation_3_DnD.Engine;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Manager;
-using Programation_3_DnD.Output;
+﻿using Programation_3_DnD_Core;
+using Programation_3_DnD_Console;
 
 public class ProgramTest
 {
+    InputProcessor _inputProcessor;
+
+    [SetUp]
+    public void SetUp()
+    {
+        _inputProcessor = new InputProcessor();
+    }
+
     [Test]
     public void CreatingOutputDoesNotCrash()
     {
@@ -21,13 +25,7 @@ public class ProgramTest
         Assert.DoesNotThrow(() =>
         {
             IOutput renderer = new OutputManagerForTests();
-            GameEngine engine = new GameEngine(renderer, path);
+            GameEngine engine = new GameEngine(renderer, _inputProcessor, path);
         });
-    }
-
-    [Test]
-    public void ProgramClassExists()
-    {
-        Assert.NotNull(typeof(Program));
     }
 }

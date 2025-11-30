@@ -1,15 +1,8 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Programation_3_DnD.Engine;
-using Programation_3_DnD.Event;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Manager;
-using Programation_3_DnD.Objects;
 
-namespace Programation_3_DnD.State
+namespace Programation_3_DnD_Core
 {
     public class GameStateMachine : IStateMachine
     {
@@ -44,12 +37,12 @@ namespace Programation_3_DnD.State
         //
         public void SetState(IState current_state)
         {
-            _currentState.Enter();
+            _currentState.Exit();
 
             _renderer.Clear();
 
             _currentState = current_state;
-            _currentState.Exit();
+            _currentState.Enter();
         }
 
         //
@@ -69,9 +62,9 @@ namespace Programation_3_DnD.State
             return _currentState;
         }
         //
-        public void ProcessInput(ConsoleKey key)
+        public void TreatInput(IInput input_manager)
         {
-            _currentState.ProcessInput(key);
+            _currentState.TreatInput(input_manager);
         }
         public void Update()
         {

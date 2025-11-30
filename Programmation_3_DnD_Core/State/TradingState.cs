@@ -1,10 +1,7 @@
-﻿using Programation_3_DnD.Composants;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Objects;
-using Spectre.Console;
+﻿
 using System;
 
-namespace Programation_3_DnD.State
+namespace Programation_3_DnD_Core
 {
     public class TradingState : IState
     {
@@ -18,8 +15,7 @@ namespace Programation_3_DnD.State
         private int _selected;
 
         //
-        public TradingState(GameStateMachine machine, IOutput renderer,
-                            GameObject player, GameObject merchant)
+        public TradingState(GameStateMachine machine, IOutput renderer, GameObject player, GameObject merchant)
         {
             _machine = machine;
             _renderer = renderer;
@@ -52,19 +48,19 @@ namespace Programation_3_DnD.State
         public void Exit() { }
 
         //
-        public void ProcessInput(ConsoleKey key)
+        public void TreatInput(IInput input_manager)
         {
-            if (key == ConsoleKey.UpArrow)
+            if (input_manager.IsKeyUp())
             {
                 _selected--;
                 if (_selected < 0) _selected = 2;
             }
-            else if (key == ConsoleKey.DownArrow)
+            else if (input_manager.IsKeyDown())
             {
                 _selected++;
                 if (_selected > 2) _selected = 0;
             }
-            else if (key == ConsoleKey.Enter)
+            else if (input_manager.IsKeyValidate())
             {
                 if (_selected == 0)
                 {
@@ -90,30 +86,5 @@ namespace Programation_3_DnD.State
         {
             _renderer.RenderTradingState(this);
         }
-
-
-        /*
-        public void Render()
-        {
-            _renderer.WriteLine("===== Trading =====");
-            _renderer.WriteLine("Your gold : " + _playerInv.GetCount("Gold"));
-            _renderer.WriteLine("Merchant's gold : " + _merchantInv.GetCount("Gold"));
-            _renderer.PassLine();
-
-            string[] entries = new string[3];
-            entries[0] = "Buy";
-            entries[1] = "Sell";
-            entries[2] = "Quit trading";
-
-            for (int i = 0; i < 3; i++)
-            {
-                string prefix = (i == _selected ? "> " : "  ");
-                _renderer.WriteLine(prefix + entries[i]);
-            }
-
-            _renderer.PassLine();
-            _renderer.WriteLine("↑/↓ to navigate, ENTER to select.");
-        }
-        */
     }
 }

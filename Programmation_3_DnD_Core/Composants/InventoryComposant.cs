@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Programation_3_DnD.Interface;
-using Spectre.Console.Rendering;
-using Spectre.Console;
 
-namespace Programation_3_DnD.Composants
+namespace Programation_3_DnD_Core
 {
     public class InventoryComposant : Composant
     {
@@ -143,7 +140,7 @@ namespace Programation_3_DnD.Composants
         }
 
         // Logique
-        public override void ProcessInput(ConsoleKey key) { }
+        public override void TreatInput(IInput input_manager) { }
         public override void Update() { }
         public override void FixedUpdate(float time) { }
 

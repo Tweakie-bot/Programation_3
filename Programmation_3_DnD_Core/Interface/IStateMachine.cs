@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Programation_3_DnD.Interface
+namespace Programation_3_DnD_Core
 {
     public interface IStateMachine
     {
-        public void ProcessInput(ConsoleKey key);
+        public void TreatInput(IInput input_manager);
         public void Update();
         public void FixedUpdate(float delta);
         public void Render();

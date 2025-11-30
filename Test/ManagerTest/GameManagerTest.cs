@@ -1,17 +1,11 @@
-﻿using NUnit.Framework;
-using Programation_3_DnD.Manager;
-using Programation_3_DnD.Engine;
-using Programation_3_DnD.Event;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Objects;
-using Programation_3_DnD.Composants;
-using Programation_3_DnD.State;
-using Programation_3_DnD.Output;
-using System;
+﻿using Programation_3_DnD_Core;
+using Programation_3_DnD_Console;
 
 public class GameManagerTest
 {
     private IOutput _renderer;
+    private InputProcessor _inputProcessor;
+
     private GameEngine _engine;
     private EventManager _eventManager;
     private GameManager _gameManager;
@@ -22,7 +16,9 @@ public class GameManagerTest
     {
         string path = Path.Combine(TestContext.CurrentContext.TestDirectory, "JsonTest");
         _renderer = new OutputManagerForTests();
-        _engine = new GameEngine(_renderer, path);
+        _inputProcessor = new InputProcessor();
+
+        _engine = new GameEngine(_renderer, _inputProcessor, path);
 
         _eventManager = _engine.GetEventManager();
         _gameManager = _engine.GetGameManager();
@@ -63,7 +59,8 @@ public class GameManagerTest
     [Test]
     public void ProcessInputDoesNotCrash()
     {
-        _gameManager.ProcessInput(ConsoleKey.A);
+        _inputProcessor.ChangeLastKeyForTests(ConsoleKey.A);
+        _gameManager.TreatInput(new InputProcessor());
         Assert.Pass();
     }
 

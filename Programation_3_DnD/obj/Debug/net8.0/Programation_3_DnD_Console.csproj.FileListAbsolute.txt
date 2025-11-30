@@ -48,3 +48,5 @@ C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Progr
 C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\bin\Debug\net8.0\Json\Npcs\Mya.json
 C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\bin\Debug\net8.0\Json\Player\Player.json
 C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\bin\Debug\net8.0\Json\Weapons\SwordWeaponData.json
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\bin\Debug\net8.0\Packable.dll
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\bin\Debug\net8.0\Packable.newtonjson.dll

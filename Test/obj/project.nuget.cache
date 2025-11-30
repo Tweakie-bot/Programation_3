@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dOqfNNuAXT0=",
+  "dgSpecHash": "uqqDyyVicSE=",
   "success": true,
   "projectFilePath": "C:\\Users\\Spxrk\\Desktop\\Programmation_Fris-e_Vincent_303\\Programation_3_DnD\\Test\\Test.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,8 @@
     "C:\\Users\\Spxrk\\.nuget\\packages\\nunit.analyzers\\3.9.0\\nunit.analyzers.3.9.0.nupkg.sha512",
     "C:\\Users\\Spxrk\\.nuget\\packages\\nunit3testadapter\\4.5.0\\nunit3testadapter.4.5.0.nupkg.sha512",
     "C:\\Users\\Spxrk\\.nuget\\packages\\opencli.sources\\0.5.0\\opencli.sources.0.5.0.nupkg.sha512",
+    "C:\\Users\\Spxrk\\.nuget\\packages\\packable\\6.2.0\\packable.6.2.0.nupkg.sha512",
+    "C:\\Users\\Spxrk\\.nuget\\packages\\packable.newtonjson\\2.0.0\\packable.newtonjson.2.0.0.nupkg.sha512",
     "C:\\Users\\Spxrk\\.nuget\\packages\\spectre.console\\0.54.0\\spectre.console.0.54.0.nupkg.sha512",
     "C:\\Users\\Spxrk\\.nuget\\packages\\spectre.console.cli\\0.53.0\\spectre.console.cli.0.53.0.nupkg.sha512",
     "C:\\Users\\Spxrk\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512"

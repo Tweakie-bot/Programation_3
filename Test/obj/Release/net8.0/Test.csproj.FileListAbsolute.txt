@@ -151,3 +151,5 @@ C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Test\
 C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Test\obj\Release\net8.0\Test.pdb
 C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Test\obj\Release\net8.0\Test.genruntimeconfig.cache
 C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Test\obj\Release\net8.0\ref\Test.dll
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Test\bin\Release\net8.0\Packable.dll
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Test\bin\Release\net8.0\Packable.newtonjson.dll

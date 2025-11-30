@@ -1,14 +1,5 @@
-﻿using Programation_3_DnD.Composants;
-using Programation_3_DnD.Engine;
-using Programation_3_DnD.Interface;
-using Programation_3_DnD.Objects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Programation_3_DnD.Event
+﻿
+namespace Programation_3_DnD_Core
 {
     public class WorkEvent : Event
     {
@@ -49,6 +40,7 @@ namespace Programation_3_DnD.Event
             inventory.AddByName("Gold", total_gain);
 
             //_eventManager.RegisterEvent(new RenderEvent(_renderer, $"You gained {totalGain} gold (WorkForce: {newForce})"));
+            _gameEngine.ClearUIMessages();
             _gameEngine.PushUIMessage($"You gained {total_gain} gold (WorkForce: {new_force})");
 
             _isCompleted = true;

@@ -1,7 +1,5 @@
-﻿using NUnit.Framework;
-using Programation_3_DnD.Composants;
-using System;
-
+﻿using Programation_3_DnD_Core;
+using Programation_3_DnD_Console;
 public class FakeComposant : Composant
 {
     public bool ProcessInputCalled = false;
@@ -9,7 +7,7 @@ public class FakeComposant : Composant
     public bool FixedUpdateCalled = false;
     public bool RenderCalled = false;
 
-    public override void ProcessInput(ConsoleKey key)
+    public override void TreatInput(IInput input_manager)
     {
         ProcessInputCalled = true;
     }
@@ -43,7 +41,7 @@ public class ComposantTest
     [Test]
     public void ProcessInputIsCalled()
     {
-        _composant.ProcessInput(ConsoleKey.A);
+        _composant.TreatInput(new InputProcessor());
         Assert.IsTrue(_composant.ProcessInputCalled);
     }
 

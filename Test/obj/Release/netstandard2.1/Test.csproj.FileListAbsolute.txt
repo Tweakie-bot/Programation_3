@@ -1,0 +1,7 @@
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Test\bin\Release\netstandard2.1\CoverletSourceRootsMapping_Test
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Test\obj\Release\netstandard2.1\Test.csproj.AssemblyReference.cache
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Test\obj\Release\netstandard2.1\Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Test\obj\Release\netstandard2.1\Test.AssemblyInfoInputs.cache
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Test\obj\Release\netstandard2.1\Test.AssemblyInfo.cs
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Test\obj\Release\netstandard2.1\Test.csproj.CoreCompileInputs.cache
+C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Test\obj\Release\netstandard2.1\Test.sourcelink.json

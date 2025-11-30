@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Programation_3_DnD.Engine;
-using Programation_3_DnD.Event;
-using Programation_3_DnD.Interface;
-using Spectre.Console;
+﻿
+using System;
 
-namespace Programation_3_DnD.State
+namespace Programation_3_DnD_Core
 {
     public class MainMenuState : IState
     {
@@ -29,13 +22,13 @@ namespace Programation_3_DnD.State
         //
         public void Enter() { }
         public void Exit() { }
-        public void ProcessInput(ConsoleKey key)
+        public void TreatInput(IInput input_manager)
         {
-            if (key == ConsoleKey.Enter)
+            if (input_manager.IsKeyValidate())
             {
                 _gameStateMachine.SetState(_gameStateMachine.GetState(typeof(InGameState)));
             }
-            if (key == ConsoleKey.Escape)
+            if (input_manager.IsKeyCancel())
             {
                 _eventManager.RegisterEvent(new QuitGameEvent(_gameEngine));
             }
