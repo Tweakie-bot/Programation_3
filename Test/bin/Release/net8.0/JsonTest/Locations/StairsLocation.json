@@ -1,6 +1,0 @@
-﻿{
-  "_name": "Stairs",
-  "_description": "The stairs turn slightly towards the next roof",
-  "_nextLocations": [ "Upstairs corridor" ],
-  "_characters" :  []
-}

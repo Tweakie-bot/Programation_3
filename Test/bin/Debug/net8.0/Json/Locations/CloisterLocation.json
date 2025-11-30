@@ -1,9 +1,0 @@
-﻿{
-  "_name": "Cloister",
-  "_description": "The circular room lead to chambers and to a stair",
-  "_nextLocations": [
-    "Mya's bedroom",
-    "Stairs"
-  ],
-  "_characters" :  []
-}

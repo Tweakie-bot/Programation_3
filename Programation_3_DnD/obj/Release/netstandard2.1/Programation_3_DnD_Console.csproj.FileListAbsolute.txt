@@ -1,6 +1,0 @@
-C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\obj\Release\netstandard2.1\Programation_3_DnD_Console.csproj.AssemblyReference.cache
-C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\obj\Release\netstandard2.1\Programation_3_DnD_Console.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\obj\Release\netstandard2.1\Programation_3_DnD_Console.AssemblyInfoInputs.cache
-C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\obj\Release\netstandard2.1\Programation_3_DnD_Console.AssemblyInfo.cs
-C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\obj\Release\netstandard2.1\Programation_3_DnD_Console.csproj.CoreCompileInputs.cache
-C:\Users\Spxrk\Desktop\Programmation_Fris-e_Vincent_303\Programation_3_DnD\Programation_3_DnD\obj\Release\netstandard2.1\Programation_3_DnD_Console.sourcelink.json

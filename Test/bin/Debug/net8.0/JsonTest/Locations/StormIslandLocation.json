@@ -1,9 +1,0 @@
-﻿{
-  "_name": "Storm Island",
-  "_description": "The island is beautifuly dangerous and inospitable",
-  "_nextLocations": [
-    "Dragon's rest",
-    "The rest of the island"
-  ],
-  "_characters" : []
-}
