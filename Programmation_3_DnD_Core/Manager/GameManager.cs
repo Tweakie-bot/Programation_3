@@ -145,7 +145,7 @@ namespace Programation_3_DnD_Core
                 throw new ArgumentNullException("Game Manager");
 
             }
-            _player.AddComposant(new PositionComposant(location));
+            _player.AddComposant(new PositionComposant(location, _renderer));
             _player.AddComposant(new IDComposant(data.GetName()));
             _player.AddComposant(new WorkForceComposant());
 

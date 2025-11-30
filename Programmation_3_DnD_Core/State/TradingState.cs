@@ -9,8 +9,8 @@ namespace Programation_3_DnD_Core
         private IOutput _renderer;
         private GameObject _player;
         private GameObject _merchant;
-        private InventoryComposant _playerInv;
-        private InventoryComposant _merchantInv;
+        private InventoryComposant _playerInventory;
+        private InventoryComposant _merchantInventory;
 
         private int _selected;
 
@@ -22,8 +22,8 @@ namespace Programation_3_DnD_Core
             _player = player;
             _merchant = merchant;
 
-            _playerInv = _player.GetComposant<InventoryComposant>();
-            _merchantInv = _merchant.GetComposant<InventoryComposant>();
+            _playerInventory = _player.GetComposant<InventoryComposant>();
+            _merchantInventory = _merchant.GetComposant<InventoryComposant>();
 
             _selected = 0;
         }
@@ -43,7 +43,10 @@ namespace Programation_3_DnD_Core
         }
 
         //
-        public void Enter() { }
+        public void Enter() 
+        {
+            _renderer.SetMerchantTrading(_merchantInventory);
+        }
 
         public void Exit() { }
 

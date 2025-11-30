@@ -71,6 +71,11 @@ namespace Programation_3_DnD_Core
         {
             return _previousLocation;
         }
+
+        public List<LocationComposant> GetListOfLocation()
+        {
+            return new List<LocationComposant>(_connectionTbl);
+        }
         public LocationComposant GetLocationAtIndex(int index)
         {
             return _connectionTbl[index];

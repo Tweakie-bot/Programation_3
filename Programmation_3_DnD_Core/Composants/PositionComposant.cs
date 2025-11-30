@@ -6,21 +6,31 @@ namespace Programation_3_DnD_Core
     {
         //
         private LocationComposant _currentLocation;
+        private IOutput _renderer;
 
         //
-        public PositionComposant(GameObject current_location)
+        public PositionComposant(GameObject current_location, IOutput renderer)
         {
             if (current_location == null)
             {
                 throw new ArgumentNullException("Debug in Location");
             }
             _currentLocation = current_location.GetComposant<LocationComposant>();
+            _renderer = renderer;
+
+            _renderer.SetCurrentLocation(_currentLocation);
+            _renderer.SetListOfLocations(_currentLocation.GetListOfLocation());
+            _renderer.SetPreviousLocation(_currentLocation.GetPreviousLocation());
         }
 
         //
         public void SetCurrentLocation(LocationComposant location)
         {
             _currentLocation = location;
+
+            _renderer.SetCurrentLocation(_currentLocation);
+            _renderer.SetListOfLocations(_currentLocation.GetListOfLocation());
+            _renderer.SetPreviousLocation(_currentLocation.GetPreviousLocation());
         }
 
         //

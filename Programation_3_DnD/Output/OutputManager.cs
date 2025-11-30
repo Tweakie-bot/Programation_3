@@ -422,5 +422,13 @@ namespace Programation_3_DnD_Console
 
             AnsiConsole.Write(Align.Center(menu, VerticalAlignment.Middle));
         }
+
+        public void SetListOfLocations(List<LocationComposant> list) { }
+
+        public void SetPreviousLocation(LocationComposant location) { }
+
+        public void SetCurrentLocation(LocationComposant location) { }
+
+        public void SetMerchantTrading(InventoryComposant? inventory) { }
     }
 }

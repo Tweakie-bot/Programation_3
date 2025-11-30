@@ -45,7 +45,7 @@ namespace Test.ComposantTest
             _locationObjectA.AddComposant(_locationA);
             _locationObjectB.AddComposant(_locationB);
 
-            _position = new PositionComposant(_locationObjectA);
+            _position = new PositionComposant(_locationObjectA, _renderer);
             _player.AddComposant(_position);
         }
 

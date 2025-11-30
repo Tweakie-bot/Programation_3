@@ -29,5 +29,13 @@ namespace Programation_3_DnD_Console
         public void RenderMainMenuState(MainMenuState state) { }
 
         public void RenderPauseMenuState(PauseMenuState state) { }
+
+        public void SetListOfLocations(List<LocationComposant> list) { }
+
+        public void SetPreviousLocation(LocationComposant location) { }
+
+        public void SetCurrentLocation(LocationComposant location) { }
+
+        public void SetMerchantTrading(InventoryComposant? merchant) { }
     }
 }
